@@ -4,6 +4,7 @@ import { MenuToggleComponent } from './components/menu-toggle/menu-toggle.compon
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { HeaderContainerComponent } from './containers/header-container/header-container.component';
 import { ExampleComponent } from './example/example.component';
+import { CommonModule } from '../../../node_modules/@angular/common';
 
 @NgModule({
     declarations: [
@@ -12,6 +13,9 @@ import { ExampleComponent } from './example/example.component';
         MenuToggleComponent,
         SearchInputComponent,
         ExampleComponent
+    ],
+    imports: [
+        CommonModule
     ],
     exports: [
         HeaderContainerComponent,

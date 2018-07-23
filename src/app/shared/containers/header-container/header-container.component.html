@@ -6,6 +6,7 @@
 			<logo-component></logo-component>
 		</div>
 		<div class="header__menu-button-container">
+			<menu-toggle (menuToggled)="toggleMenu()" [menuOpen]="menuOpen"></menu-toggle>
 		</div>
 	</div>
 </header>
