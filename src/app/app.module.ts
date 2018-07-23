@@ -4,24 +4,25 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/containers/home-container/home-container.component';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
 // Our modules
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '../../node_modules/@angular/common';
+import { HomeContainerComponent } from './home/containers/home-container/home-container.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
     ],
     imports: [
+        HomeModule,
         BrowserModule.withServerTransition({ appId: 'my-app' }),
         RouterModule.forRoot([
-            { path: '', component: HomeComponent, pathMatch: 'full' },
-            { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
-            { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule' }
+            { path: '', component: HomeContainerComponent, pathMatch: 'full' },
+            // { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
+            // { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule' }
         ]),
         TransferHttpCacheModule,
         HttpModule,
