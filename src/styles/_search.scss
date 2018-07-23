@@ -1,0 +1,21 @@
+.search {
+	.input {
+		padding-bottom: 15px;
+		border-bottom: 1px solid $darkgrey;
+		width: 100%;
+		font-size: 18px;
+		position: relative;
+		@include tablet {
+			font-size: 22px;
+			width: 350px;
+		}
+		&:focus {
+			top: 1px;
+			border-bottom: 2px solid $accent;
+		}
+		&::placeholder {
+			font-weight: 300;
+			color: $lightgrey;
+		}
+	}
+}

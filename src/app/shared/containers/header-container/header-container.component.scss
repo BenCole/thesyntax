@@ -1,0 +1,50 @@
+@import '../../../../styles/queries.scss';
+
+header {
+	margin-bottom: 20px;
+	@include tablet {
+		margin-bottom: 50px;
+	}
+	.header {
+		padding: 14px 20px 0;
+		display: flex;
+		height: 60px;
+		align-items: center;
+		@include tablet {
+			padding-top: 30px;
+	}
+		&__search-container {
+			flex-basis: 60%;
+			min-width: 150px;
+			display: none;
+			@include tablet {
+				order: 1;
+				display: block;
+			}
+		}
+		&__logo-container {
+			flex-basis: 60%;
+			min-width: 50px;
+			order: 1;
+			display: flex;
+			@include tablet {
+				justify-content: flex-end;
+				flex-basis: 40%;
+				order: 2;
+			}
+		}
+		&__menu-button-container {
+			flex-basis: 40%;
+			min-width: 75px;
+			order: 2;
+			text-align: right;
+			margin-left: 5px;
+			.fa-bars {
+				font-size: 30px;
+			}
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+}
