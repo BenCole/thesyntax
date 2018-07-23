@@ -62,7 +62,7 @@ main.container{
 			}
 		}
 	}
-	
+
 	.buttons-container {
 		display: flex;
 		margin-top: 60px;
@@ -70,4 +70,10 @@ main.container{
 			margin: auto;
 		}
 	}
+}
+
+.footer-container {
+	flex: 0 0 150px;
+	background-color: $bg;
+	margin-top: 75px;
 }

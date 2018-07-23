@@ -3,8 +3,8 @@ import { LogoComponent } from './components/logo/logo.component';
 import { MenuToggleComponent } from './components/menu-toggle/menu-toggle.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { HeaderContainerComponent } from './containers/header-container/header-container.component';
-import { ExampleComponent } from './example/example.component';
 import { CommonModule } from '../../../node_modules/@angular/common';
+import { FooterContainerComponent } from './containers/footer-container/footer-container.component';
 
 @NgModule({
     declarations: [
@@ -12,7 +12,7 @@ import { CommonModule } from '../../../node_modules/@angular/common';
         LogoComponent,
         MenuToggleComponent,
         SearchInputComponent,
-        ExampleComponent
+        FooterContainerComponent
     ],
     imports: [
         CommonModule
@@ -21,7 +21,8 @@ import { CommonModule } from '../../../node_modules/@angular/common';
         HeaderContainerComponent,
         LogoComponent,
         MenuToggleComponent,
-        SearchInputComponent
+        SearchInputComponent,
+        FooterContainerComponent
     ]
 })
 export class SharedModule { }
