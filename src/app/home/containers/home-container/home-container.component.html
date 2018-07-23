@@ -6,20 +6,7 @@
 
 	<search-input class="search-container"></search-input>
 
-	<div class="language-list">
-		<div class="button button--primary">
-			<i class="devicon devicon-javascript-plain"></i>javascript</div>
-		<div class="button button--primary">
-			<i class="devicon devicon-typescript-plain"></i>typescript</div>
-		<div class="button button--primary">
-			<i class="devicon devicon-angularjs-plain"></i>angular</div>
-		<div class="button button--primary">
-			<i class="devicon devicon-sass-original"></i>sass</div>
-		<div class="button button--primary">
-			<i class="devicon devicon-angularjs-plain-wordmark"></i>angular js</div>
-		<div class="button button--primary">
-			<i class="devicon devicon-css3-plain"></i>css</div>
-	</div>
+	<language-list-component [languages]="languageList" class="language-list"></language-list-component>
 
 	<div class="buttons-container">
 		<div class="button button--primary">
