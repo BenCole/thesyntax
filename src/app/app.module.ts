@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '../../node_modules/@angular/common';
 import { HomeContainerComponent } from './home/containers/home-container/home-container.component';
 import { HomeModule } from './home/home.module';
+import { LanguageModule } from './language/language.module';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { HomeModule } from './home/home.module';
         TransferHttpCacheModule,
         HttpModule,
         SharedModule,
-        CommonModule
+        CommonModule,
+        LanguageModule
     ],
     providers: [],
     bootstrap: [AppComponent]
