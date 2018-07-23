@@ -3,6 +3,7 @@ import { TestBed, inject, ComponentFixture } from '@angular/core/testing';
 import { HeaderContainerComponent } from './header-container.component';
 import { LogoComponent } from '../../components/logo/logo.component';
 import { MenuToggleComponent } from '../../components/menu-toggle/menu-toggle.component';
+import { SearchInputComponent } from '../../components/search-input/search-input.component';
 
 describe('header container component', () => {
 
@@ -16,7 +17,8 @@ describe('header container component', () => {
             declarations: [
                 HeaderContainerComponent,
                 LogoComponent,
-                MenuToggleComponent
+                MenuToggleComponent,
+                SearchInputComponent
             ]
         })
         .compileComponents();
@@ -56,7 +58,11 @@ describe('header container component', () => {
         });
     });
 
-    // make it a variable
+    describe('search input', () => {
+        it('should use the search input component', () => {
+            expect(element.querySelector('search-input')).toBeTruthy();
+        });
+    });
 
     //ISOLATE
 
