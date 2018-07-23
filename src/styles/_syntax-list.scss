@@ -1,0 +1,15 @@
+.syntax-list {
+	display: flex;
+	flex-wrap: wrap;
+	li {
+		flex-basis: 25%;
+		min-width: 150px;
+		padding: 5px;
+		margin-bottom: 10px;
+		font-size: 18px;
+		a:hover {
+			color:$accent;
+			font-weight: 500;
+		}
+	}
+}

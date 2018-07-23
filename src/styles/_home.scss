@@ -1,0 +1,73 @@
+main.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 20px;
+	position: relative;
+	width: 100%;
+	.hero {
+		margin: 10px 0;
+		position: relative;
+		@include tablet {
+			margin: 20px 0;
+		}
+		&__headline {
+			line-height: 115%;
+			text-align: center;
+			color: $primary;
+			font-weight: bold;
+			font-size: 34px;
+			display: inline;
+			@include tablet {
+				font-size: 50px;
+			}
+			&--left {
+				text-align: left;
+			}
+		}
+		&__icon {
+			display: inline;
+			color: $accent;
+			font-size: 34px;
+			margin-right: 20px;
+			@include tablet() {
+				font-size: 45px;
+				margin-right: 25px;
+			}
+		}
+	}
+
+	.search-container {
+		align-self: stretch;
+		.search {
+			margin: 25px auto;
+			@include tablet {
+				margin: 25px auto 50px;
+				width: 400px;
+			}
+		}
+	}
+	
+	.language-list {
+		display: flex;
+		flex-flow: row wrap;
+		@include tablet {
+			width: 60%;
+		}
+		.button {
+			flex-grow: 1;
+			margin: 8px 0;
+			@include custom-min(499px) {
+				margin: 15px;
+			}
+		}
+	}
+	
+	.buttons-container {
+		display: flex;
+		margin-top: 60px;
+		.button {
+			margin: auto;
+		}
+	}
+}

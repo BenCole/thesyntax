@@ -1,0 +1,24 @@
+.mobile-menu {
+	display: none;
+	flex-flow: row wrap;
+	// min-height: calc(100vh - 50px);
+	width: 100%;
+	position: absolute;
+	z-index: 1000;
+	padding: 20px;
+	background-color: $bg;
+	align-content: flex-start;
+	.button {
+		flex-grow: 1;
+		margin: 8px 0;
+		@include custom-min(499px) {
+			margin: 15px;
+		}
+		&:last-child {
+			margin-top: 30px;
+		}
+	}
+	.search {
+		flex-basis: 100%;
+	}
+}

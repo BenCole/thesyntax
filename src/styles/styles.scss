@@ -1,0 +1,42 @@
+
+@import 'reset';
+@import 'variables';
+@import 'queries';
+@import 'typography';
+@import 'buttons';
+@import 'header';
+@import 'home';
+@import 'footer';
+@import 'logo';
+@import 'search';
+@import 'forms';
+@import 'helpers';
+@import 'syntax-list';
+@import 'search-container';
+@import 'mobile-menu';
+@import 'view-syntax';				
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	flex-grow: 1;
+}
+
+.container {
+	max-width: 1400px;
+	margin: 0 auto;		
+}
