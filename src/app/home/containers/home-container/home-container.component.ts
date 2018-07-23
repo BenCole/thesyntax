@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { map } from 'rxjs/operators';
+import { Language } from '../../../models/language.interface';
 
 @Component({
     selector: 'home-container-component',
@@ -9,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class HomeContainerComponent implements OnInit {
     public message: string;
 
-    languageList = [
+    languageList: Language[] = [
         {
             name: 'javascript',
             icon: 'devicon-javascript-plain'
