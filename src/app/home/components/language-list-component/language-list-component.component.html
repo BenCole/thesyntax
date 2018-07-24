@@ -1,3 +1,5 @@
-<div *ngFor="let language of languages" class="button button--primary">
-	<i [ngClass]="language.icon" class="devicon"></i>{{language.name}}
-</div>
+<a *ngFor="let language of languages" routerLink="/lang/{{language.name}}">
+	<div class="button button--primary">
+		<i [ngClass]="language.icon" class="devicon"></i>{{language.name}}
+	</div>
+</a>

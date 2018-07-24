@@ -10,5 +10,4 @@ export class LanguageListComponent {
 
     @Input()
     languages: Language[];
-
 }
