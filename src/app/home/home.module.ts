@@ -3,6 +3,7 @@ import { HomeContainerComponent } from './containers/home-container/home-contain
 import { SharedModule } from '../shared/shared.module';
 import { LanguageListComponent } from './components/language-list-component/language-list-component.component';
 import { CommonModule } from '../../../node_modules/@angular/common';
+import { RouterModule } from '../../../node_modules/@angular/router';
 
 @NgModule({
     declarations: [
@@ -11,9 +12,10 @@ import { CommonModule } from '../../../node_modules/@angular/common';
     ],
     imports: [
         SharedModule,
-        CommonModule
+        CommonModule,
+        RouterModule
     ]
 })
-export class HomeModule { 
+export class HomeModule {
 
 }

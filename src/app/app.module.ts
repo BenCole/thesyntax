@@ -12,6 +12,8 @@ import { CommonModule } from '../../node_modules/@angular/common';
 import { HomeContainerComponent } from './home/containers/home-container/home-container.component';
 import { HomeModule } from './home/home.module';
 import { LanguageModule } from './language/language.module';
+import { AddSyntaxModule } from './add-syntax/add-syntax.module';
+import { ViewSyntaxModule } from './view-syntax/view-syntax.module';
 
 @NgModule({
     declarations: [
@@ -29,7 +31,9 @@ import { LanguageModule } from './language/language.module';
         HttpModule,
         SharedModule,
         CommonModule,
-        LanguageModule
+        LanguageModule,
+        AddSyntaxModule,
+        ViewSyntaxModule
     ],
     providers: [],
     bootstrap: [AppComponent]
