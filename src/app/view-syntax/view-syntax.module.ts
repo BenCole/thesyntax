@@ -5,12 +5,13 @@ import { RouterModule } from '../../../node_modules/@angular/router';
 
 @NgModule({
     imports: [
-        CommonModule
-        // RouterModule.forChild([
-        //     {
-        //         path: ''
-        //     }
-        // ])
+        CommonModule,
+        RouterModule.forChild([
+            {
+                path: 'language/:lang/:syntax',
+                component: ViewSyntaxContainerComponent
+            }
+        ])
     ],
     declarations: [ViewSyntaxContainerComponent]
 })

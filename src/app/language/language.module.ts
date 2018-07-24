@@ -8,7 +8,7 @@ import { RouterModule } from '../../../node_modules/@angular/router';
         CommonModule,
         RouterModule.forChild([
             { 
-                path: 'lang', 
+                path: 'language', 
                 children: [
                     {
                         path: '',
@@ -18,7 +18,7 @@ import { RouterModule } from '../../../node_modules/@angular/router';
                     {
                         path: ':lang',
                         component: LanguageContainerComponent,
-                        }
+                    }
                 ]
             }
         ])
