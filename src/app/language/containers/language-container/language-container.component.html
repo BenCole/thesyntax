@@ -1,1 +1,21 @@
-{{lang}}
+
+<main class="container language">
+	<div class="hero">
+		<i class="hero__icon devicon-javascript-plain"></i>
+		<h1 class="hero__headline">{{lang}}</h1>
+	</div>
+
+	<div class="search-container">
+		<div class="search">
+			<input class="input" type="text" placeholder="Filter javascript...">
+		</div>
+	</div>
+
+	<syntax-list [language]="lang" [list]="list"></syntax-list>
+
+	<div class="buttons-container">
+		<div class="button button--primary">
+			add new syntax
+		</div>
+	</div>
+</main>
