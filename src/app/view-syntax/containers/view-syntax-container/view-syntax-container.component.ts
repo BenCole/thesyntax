@@ -19,5 +19,4 @@ export class ViewSyntaxContainerComponent implements OnInit {
             this.lang = params.lang;
         });
     }
-
 }
