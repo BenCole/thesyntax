@@ -26,7 +26,7 @@ export class LanguageContainerComponent implements OnInit {
                 name: 'varaiable',
                 id: 'variable'
             }
-        ]
+        ];
     }
 
 }
