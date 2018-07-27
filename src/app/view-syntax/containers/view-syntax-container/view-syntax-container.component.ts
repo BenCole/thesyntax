@@ -10,6 +10,7 @@ export class ViewSyntaxContainerComponent implements OnInit {
 
     id: string;
     lang: string;
+    content: string;
 
     constructor(private route: ActivatedRoute) { }
 
@@ -18,5 +19,14 @@ export class ViewSyntaxContainerComponent implements OnInit {
             this.id = params.syntax;
             this.lang = params.lang;
         });
+
+        this.content = `
+		<pre><code class="javascript highlight">
+		function() {
+            console.log("yolo");
+		}
+		</code></pre>
+		`;
     }
+
 }

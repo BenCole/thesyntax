@@ -4,11 +4,13 @@ import { ViewSyntaxContainerComponent } from './containers/view-syntax-container
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { ViewCodeComponent } from './components/view-code/view-code.component';
 import { HighlightJsModule } from '../../../node_modules/angular2-highlight-js';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
     imports: [
         CommonModule,
         HighlightJsModule,
+        ClipboardModule,
         RouterModule.forChild([
             {
                 path: 'language/:lang/:syntax',
