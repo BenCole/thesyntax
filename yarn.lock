@@ -463,6 +463,10 @@ amqplib@^0.5.2:
     readable-stream "1.x >=1.1.9"
     safe-buffer "^5.0.1"
 
+angular2-highlight-js@^6.0.1-alpha:
+  version "6.0.1-alpha"
+  resolved "https://registry.yarnpkg.com/angular2-highlight-js/-/angular2-highlight-js-6.0.1-alpha.tgz#a49450457a000ec19cc6fe52311db02ec9188e3b"
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"

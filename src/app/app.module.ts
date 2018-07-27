@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+
 // Our modules
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '../../node_modules/@angular/common';
@@ -28,6 +30,7 @@ import { ViewSyntaxModule } from './view-syntax/view-syntax.module';
             // { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule' }
         ]),
         TransferHttpCacheModule,
+        HighlightJsModule,
         HttpModule,
         SharedModule,
         CommonModule,
@@ -35,7 +38,9 @@ import { ViewSyntaxModule } from './view-syntax/view-syntax.module';
         AddSyntaxModule,
         ViewSyntaxModule
     ],
-    providers: [],
+    providers: [
+        HighlightJsService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
