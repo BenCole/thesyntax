@@ -10,25 +10,29 @@
 			</div>
 		</div>
 	</div>
-
+	
+	
 	<div class="view-syntax__code-container">
 		<div class="view-syntax__code-block">
-			<div class="custom-select-wrapper">
-				<select class="custom-select">
-					<option>Spaces</option>
-					<option>Tabs</option>
-				</select>
-			</div>
-			<div class="custom-select-wrapper">
-				<select class="custom-select">
-					<option>1</option>
-					<option selected>2</option>
-					<option>4</option>
-					<option>8</option>
-				</select>
-			</div>
-			<div class="button button--white">
-				COPY <i class="far fa-copy"></i>
+			<view-code></view-code>
+			<div class="view-syntax__copy-options">
+				<div class="custom-select-wrapper">
+					<select class="custom-select">
+						<option>Spaces</option>
+						<option>Tabs</option>
+					</select>
+				</div>
+				<div class="custom-select-wrapper">
+					<select class="custom-select">
+						<option>1</option>
+						<option selected>2</option>
+						<option>4</option>
+						<option>8</option>
+					</select>
+				</div>
+				<div class="button button--white" ngxClipboard [cbContent]="content">
+					COPY <i class="far fa-copy"></i>
+				</div>
 			</div>
 		</div>
 	</div>
