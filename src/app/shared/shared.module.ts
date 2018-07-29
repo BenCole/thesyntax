@@ -5,6 +5,7 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { HeaderContainerComponent } from './containers/header-container/header-container.component';
 import { CommonModule } from '../../../node_modules/@angular/common';
 import { FooterContainerComponent } from './containers/footer-container/footer-container.component';
+import { SearchContainerComponent } from './containers/search-container/search-container.component';
 
 @NgModule({
     declarations: [
@@ -12,7 +13,8 @@ import { FooterContainerComponent } from './containers/footer-container/footer-c
         LogoComponent,
         MenuToggleComponent,
         SearchInputComponent,
-        FooterContainerComponent
+        FooterContainerComponent,
+        SearchContainerComponent
     ],
     imports: [
         CommonModule
@@ -22,7 +24,8 @@ import { FooterContainerComponent } from './containers/footer-container/footer-c
         LogoComponent,
         MenuToggleComponent,
         SearchInputComponent,
-        FooterContainerComponent
+        FooterContainerComponent,
+        SearchContainerComponent
     ]
 })
 export class SharedModule { }
