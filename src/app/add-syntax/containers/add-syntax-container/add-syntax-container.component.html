@@ -4,37 +4,52 @@
 			<h1 class="hero__headline hero__headline--left">Add new syntax</h1>
 		</div>
 		
-		<form>
+		<form (ngSubmit)="submitForm(addSyntaxForm)" [formGroup]="addSyntaxForm">
 			<div class="custom-select-wrapper custom-select-wrapper--dark">
-				<select class="custom-select custom-select--dark">
+				<select required
+					formControlName="category" 
+					class="custom-select custom-select--dark">
 					<option>Javascript</option>
 					<option selected>Typescript</option>
 					<option>CSS</option>
 					<option>SASS</option>
 				</select>
 			</div>
-			<input class="custom-input" type="text" placeholder="Name">
-			<div class="custom-checkbox">
-				<input id="check" type="checkbox">
-				<label for="check"></label>
+			<div *ngIf="category.invalid && category.touched || submitAttempted">
+				A language is required
 			</div>
+			<input class="custom-input" 
+				type="text"
+				formControlName="name"
+				required
+				placeholder="Name">
+				<!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"> -->
+					<!-- some error -->
+				<!-- </div> -->
+				<div *ngIf="name.invalid && name.touched || submitAttempted">
+					A name is required
+				</div>
+			<!-- <div class="custom-checkbox">
+				<input id="check" type="checkbox">
 			<div class="custom-checkbox">
 				<input id="check2" type="checkbox">
 				<label for="check2"></label>
-			</div>
+			</div> -->
 				  
-		</form>
-	
-		<div class="buttons-container--left">
-			<div class="button button--primary">
-				add new syntaxx
+			<div class="buttons-container--left">
+				<button type="submit" class="button button--primary">
+					add new syntax
+				</button>
 			</div>
+		</form>
+		{{addSyntaxForm.value | json}}
+		<div *ngIf="syntaxError">
+			Please enter some syntax
 		</div>
 	</div>
 
 	<div class="view-syntax__code-container">
 		<div class="view-syntax__code-block"
-			[options]="options"
 			[(text)]="text"
 			ace-editor 
 			[mode]="'javascript'">

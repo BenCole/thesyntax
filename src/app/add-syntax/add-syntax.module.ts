@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddSyntaxContainerComponent } from './containers/add-syntax-container/add-syntax-container.component';
-import { RouterModule } from '../../../node_modules/@angular/router';
+import { RouterModule } from '@angular/router';
 import { AceEditorModule } from 'ng2-ace-editor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddSyntaxContainerComponent } from './containers/add-syntax-container/add-syntax-container.component';
 
 @NgModule({
     imports: [
         CommonModule,
         AceEditorModule,
+        FormsModule,
+        ReactiveFormsModule,
         RouterModule.forChild([
             {
                 path: 'add',
