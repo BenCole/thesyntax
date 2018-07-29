@@ -6,6 +6,9 @@ import { HeaderContainerComponent } from './containers/header-container/header-c
 import { CommonModule } from '../../../node_modules/@angular/common';
 import { FooterContainerComponent } from './containers/footer-container/footer-container.component';
 import { SearchContainerComponent } from './containers/search-container/search-container.component';
+import { MobileMenuContainerComponent } from './containers/mobile-menu-container/mobile-menu-container.component';
+import { LanguageListComponent } from './components/language-list-component/language-list-component.component';
+import { RouterModule } from '../../../node_modules/@angular/router';
 
 @NgModule({
     declarations: [
@@ -14,10 +17,13 @@ import { SearchContainerComponent } from './containers/search-container/search-c
         MenuToggleComponent,
         SearchInputComponent,
         FooterContainerComponent,
-        SearchContainerComponent
+        SearchContainerComponent,
+        MobileMenuContainerComponent,
+        LanguageListComponent,
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ],
     exports: [
         HeaderContainerComponent,
@@ -25,7 +31,9 @@ import { SearchContainerComponent } from './containers/search-container/search-c
         MenuToggleComponent,
         SearchInputComponent,
         FooterContainerComponent,
-        SearchContainerComponent
+        SearchContainerComponent,
+        MobileMenuContainerComponent,
+        LanguageListComponent
     ]
 })
 export class SharedModule { }
