@@ -4,7 +4,7 @@
 			<h1 class="hero__headline hero__headline--left">Add new syntax</h1>
 		</div>
 		
-		<form>
+		<form (ngSubmit)="something(addSyntaxForm)" #addSyntaxForm="ngForm">
 			<div class="custom-select-wrapper custom-select-wrapper--dark">
 				<select class="custom-select custom-select--dark">
 					<option>Javascript</option>
@@ -13,7 +13,16 @@
 					<option>SASS</option>
 				</select>
 			</div>
-			<input class="custom-input" type="text" placeholder="Name">
+			<input class="custom-input" 
+				type="text"
+				name="name"
+				#name="ngModel"
+				required
+				[ngModel]="syntax.name"
+				placeholder="Name">
+				<div *ngIf="name.invalid && (name.dirty || name.touched)">
+					some error
+				</div>
 			<div class="custom-checkbox">
 				<input id="check" type="checkbox">
 				<label for="check"></label>
@@ -23,14 +32,16 @@
 				<label for="check2"></label>
 			</div>
 				  
-		</form>
-	
-		<div class="buttons-container--left">
-			<div class="button button--primary">
-				add new syntaxx
+			<div class="buttons-container--left">
+				<div class="button button--primary">
+					add new syntax
+				</div>
 			</div>
-		</div>
+		</form>
+		{{syntax | json}}
+		{{addSyntaxForm.value | json}}
 	</div>
+
 
 	<div class="view-syntax__code-container">
 		<div class="view-syntax__code-block"

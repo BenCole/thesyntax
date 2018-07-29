@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddSyntaxContainerComponent implements OnInit {
 
     text: string = '// Add syntax here';
+    syntax = {};
 
     constructor() { }
 
