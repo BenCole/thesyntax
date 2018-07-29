@@ -34,7 +34,7 @@
 		overflow-x: auto;
 	}
 	&__code-block {
-		background-color: $secondary;
+		// background-color: $secondary;
 		border-radius: 7px;
 		min-height: 400px;
 		// min-width: 450px
@@ -89,11 +89,6 @@
 	&__code-container {
 		flex-basis: 55%;
 		overflow-x: auto;
-	}
-	&__code-block {
-		background-color: $secondary;
-		border-radius: 7px;
-		min-height: 400px;
 	}
 	&__copy-options {
 		padding: 20px;
