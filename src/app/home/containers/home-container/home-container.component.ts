@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Language } from '../../../models/language.interface';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
     selector: 'home-container-component',
@@ -9,39 +10,12 @@ import { Language } from '../../../models/language.interface';
 export class HomeContainerComponent implements OnInit {
     public message: string;
 
-    languageList: Language[] = [
-        {
-            name: 'javascript',
-            icon: 'devicon-javascript-plain'
+    languageList: Language[];
 
-        },
-        {
-            name: 'typescript',
-            icon: 'devicon-typescript-plain'
-        },
-        {
-            name: 'angular',
-            icon: 'devicon-angularjs-plain'
-
-        },
-        {
-            name: 'sass',
-            icon: 'devicon-sass-original'
-        },
-        {
-            name: 'angular js',
-            icon: 'devicon-angularjs-plain-wordmark'
-        },
-        {
-            name: 'css',
-            icon: 'devicon-css3-plain'
-        }
-    ];
-
-
-    constructor(private http: Http) { }
+    constructor(private http: Http, private languageService: LanguageService) { }
 
     ngOnInit() {
-        this.message = 'Hello';
+        this.languageService.getLanguages()
+            .subscribe(langs => this.languageList = langs);
     }
 }
