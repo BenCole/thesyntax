@@ -27,13 +27,17 @@
 	
 		<div class="buttons-container--left">
 			<div class="button button--primary">
-				add new syntax
+				add new syntaxx
 			</div>
 		</div>
 	</div>
 
 	<div class="view-syntax__code-container">
-		<div class="view-syntax__code-block">
+		<div class="view-syntax__code-block"
+			[options]="options"
+			[(text)]="text"
+			ace-editor 
+			[mode]="'javascript'">
 		</div>
 	</div>
 
