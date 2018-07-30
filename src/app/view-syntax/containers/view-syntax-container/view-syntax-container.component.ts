@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '../../../../../node_modules/@angular/router';
+import { SyntaxService } from '../../../services/syntax.service';
 
 @Component({
     selector: 'view-syntax-container',
@@ -12,21 +13,17 @@ export class ViewSyntaxContainerComponent implements OnInit {
     lang: string;
     content: string;
 
-    constructor(private route: ActivatedRoute) { }
+    constructor(private route: ActivatedRoute, private syntaxService: SyntaxService) { }
 
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.id = params.syntax;
             this.lang = params.lang;
+
+            this.syntaxService.getOne(this.id)
+                .subscribe(item => {
+                    this.content = `<pre><code class='${this.lang} highlight'>${item[0].syntax}</pre></code>`;
+                });
         });
-
-        this.content = `
-		<pre><code class="javascript highlight">
-		function() {
-            console.log("yolo");
-		}
-		</code></pre>
-		`;
     }
-
 }

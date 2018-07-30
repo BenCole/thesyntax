@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UiService } from '../../../services/ui.service';
 
 @Component({
     selector: 'header-container-component',
@@ -9,10 +10,14 @@ export class HeaderContainerComponent {
     menuOpen: boolean;
 
     toggleMenu() {
-        this.menuOpen = !this.menuOpen;
+        this.uiService.toggleMenu();
     }
 
-    constructor() {
-        this.menuOpen = false;
+    constructor(private uiService: UiService) {
+        this.uiService.menuOpen
+            .subscribe(status => {
+                console.log(status);
+                this.menuOpen = status;
+            });
     }
 }

@@ -8,7 +8,7 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 export class MenuToggleComponent {
 
     constructor() {
-        this.menuOpen = true;
+        
     }
 
     @Input()
