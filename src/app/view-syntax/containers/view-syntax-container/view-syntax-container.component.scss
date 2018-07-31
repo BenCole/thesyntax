@@ -28,6 +28,10 @@
 				display: block
 			}
 		}
+		h2 {
+			outline: none;
+			cursor: pointer;
+		}
 	}
 	&__code-container {
 		flex-basis: 55%;

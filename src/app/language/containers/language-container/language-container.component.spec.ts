@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LanguageContainerComponent } from './language-container.component';
-import { RouterModule } from '../../../../../node_modules/@angular/router';
+import { RouterModule } from '@angular/router';
 
 describe('LanguageContainerComponent', () => {
     let component: LanguageContainerComponent;
