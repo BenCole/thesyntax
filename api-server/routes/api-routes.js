@@ -13,7 +13,34 @@ var router = express.Router();
 // POST add
 
 router.get('/language', function(req, res) {
-    res.send("language");
+    res.send([
+        {
+            name: 'javascript',
+            icon: 'devicon-javascript-plain'
+
+        },
+        {
+            name: 'typescript',
+            icon: 'devicon-typescript-plain'
+        },
+        {
+            name: 'angular',
+            icon: 'devicon-angularjs-plain'
+
+        },
+        {
+            name: 'sass',
+            icon: 'devicon-sass-original'
+        },
+        {
+            name: 'angular js',
+            icon: 'devicon-angularjs-plain-wordmark'
+        },
+        {
+            name: 'css',
+            icon: 'devicon-css3-plain'
+        }
+    ]);
 });
 
 router.get('/language/:id', function(req, res) {
