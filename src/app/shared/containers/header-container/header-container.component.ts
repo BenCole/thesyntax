@@ -7,17 +7,26 @@ import { UiService } from '../../../services/ui.service';
     templateUrl: 'header-container.component.html'
 })
 export class HeaderContainerComponent {
+
     menuOpen: boolean;
+    searchOpen: boolean;
+    ok: string;
 
     toggleMenu() {
         this.uiService.toggleMenu();
     }
 
+    toggleSearch(status) {
+        this.uiService.toggleSearch(status);
+    }
+
     constructor(private uiService: UiService) {
         this.uiService.menuOpen
             .subscribe(status => {
-                console.log(status);
                 this.menuOpen = status;
             });
+
+        this.uiService.searchOpen
+            .subscribe(status => this.searchOpen = status);
     }
 }

@@ -1,7 +1,7 @@
 <header>
 	<div class="container header">
 		<div class="header__search-container">
-			<search-input (typing-stared)="toggleSearch()"></search-input>
+			<search-input (typingStarted)="toggleSearch($event)"></search-input>
 		</div>
 		<div class="header__logo-container">
 			<logo-component></logo-component>

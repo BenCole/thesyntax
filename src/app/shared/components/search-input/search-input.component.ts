@@ -11,6 +11,6 @@ export class SearchInputComponent {
     typingStarted: EventEmitter<any> = new EventEmitter;
 
     startedTyping() {
-        this.typingStarted.emit();
+        this.typingStarted.emit(true);
     }
 }
