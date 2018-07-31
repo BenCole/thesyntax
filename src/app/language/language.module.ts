@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LanguageContainerComponent } from './containers/language-container/language-container.component';
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { SyntaxListComponent } from './components/syntax-list/syntax-list.component';
+import { SyntaxService } from '../services/syntax.service';
 
 @NgModule({
     imports: [
@@ -24,6 +25,9 @@ import { SyntaxListComponent } from './components/syntax-list/syntax-list.compon
             }
         ])
     ],
-    declarations: [LanguageContainerComponent, SyntaxListComponent]
+    declarations: [LanguageContainerComponent, SyntaxListComponent],
+    providers: [
+        SyntaxService
+    ]
 })
 export class LanguageModule { }

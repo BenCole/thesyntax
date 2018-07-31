@@ -3,6 +3,7 @@ import { HomeContainerComponent } from './containers/home-container/home-contain
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '../../../node_modules/@angular/common';
 import { RouterModule } from '../../../node_modules/@angular/router';
+import { LanguageService } from '../services/language.service';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,9 @@ import { RouterModule } from '../../../node_modules/@angular/router';
         CommonModule,
         RouterModule,
         SharedModule
+    ],
+    providers: [
+        LanguageService
     ]
 })
 export class HomeModule {

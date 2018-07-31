@@ -9,6 +9,8 @@ import { SearchContainerComponent } from './containers/search-container/search-c
 import { MobileMenuContainerComponent } from './containers/mobile-menu-container/mobile-menu-container.component';
 import { LanguageListComponent } from './components/language-list-component/language-list-component.component';
 import { RouterModule } from '../../../node_modules/@angular/router';
+import { LanguageService } from '../services/language.service';
+import { UiService } from '../services/ui.service';
 
 @NgModule({
     declarations: [
@@ -34,6 +36,10 @@ import { RouterModule } from '../../../node_modules/@angular/router';
         SearchContainerComponent,
         MobileMenuContainerComponent,
         LanguageListComponent
+    ],
+    providers: [
+        UiService,
+        LanguageService
     ]
 })
 export class SharedModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Input } from '@angular/core';
 
 
 @Component({
@@ -8,16 +8,10 @@ import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 })
 export class ViewCodeComponent implements OnInit{
 
+    @Input()
     content: string;
 
-    constructor(private el: ElementRef) {
-        this.content = `
-        <pre><code class="javascript highlight">
-        function() {
-            console.log("yolo");
-        }
-        </code></pre>
-        `;
+    constructor() {
     }
 
     ngOnInit() {

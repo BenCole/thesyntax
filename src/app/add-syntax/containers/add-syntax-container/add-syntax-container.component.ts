@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Syntax } from '../../../models/syntax';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'add-syntax-container',
@@ -9,10 +9,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class AddSyntaxContainerComponent implements OnInit {
 
-    text: string = '// Add syntax here';
+    text = '// Add syntax here';
     syntax = <Syntax>{};
     addSyntaxForm: FormGroup;
-    submitAttempted: boolean = false;
+    submitAttempted = false;
     syntaxError: boolean;
 
     get name() { return this.addSyntaxForm.get('name'); }

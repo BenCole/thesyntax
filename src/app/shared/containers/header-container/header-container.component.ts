@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UiService } from '../../../services/ui.service';
 
 @Component({
     selector: 'header-container-component',
@@ -6,13 +7,26 @@ import { Component } from '@angular/core';
     templateUrl: 'header-container.component.html'
 })
 export class HeaderContainerComponent {
+
     menuOpen: boolean;
+    searchOpen: boolean;
+    ok: string;
 
     toggleMenu() {
-        this.menuOpen = !this.menuOpen;
+        this.uiService.toggleMenu();
     }
 
-    constructor() {
-        this.menuOpen = false;
+    toggleSearch(searchString) {
+        this.uiService.toggleSearch(searchString);
+    }
+
+    constructor(private uiService: UiService) {
+        this.uiService.menuOpen
+            .subscribe(status => {
+                this.menuOpen = status;
+            });
+
+        this.uiService.searchOpen
+            .subscribe(status => this.searchOpen = status);
     }
 }

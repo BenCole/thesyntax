@@ -4,9 +4,9 @@
 			<span class="accent">[</span>syn.tax<span class="accent">]</span> lookup</h1>
 	</div>
 
-	<search-input class="search-container"></search-input>
+	<!-- <search-input (typingStarted)="toggleSearch($event)" class="search-container"></search-input> -->
 
-	<language-list-component [languages]="languageList" class="language-list"></language-list-component>
+	<language-list-component [languages]="languageList" style="margin-top: 30px;"  class="language-list"></language-list-component>
 
 	<div class="buttons-container">
 		<div routerLink="add" class="button button--primary">

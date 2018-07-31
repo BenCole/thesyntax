@@ -5,7 +5,8 @@
     background: #23241f;
 	-webkit-text-size-adjust: none;
 	border-radius: 7px;
-	line-height: 24px;
+    line-height: 24px;
+    min-height: 100px;
 }
 
 .hljs,

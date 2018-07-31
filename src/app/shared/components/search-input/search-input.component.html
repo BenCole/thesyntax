@@ -1,3 +1,7 @@
 <div class="search">
-	<input (keyup)="startedTyping()" type="text" class="input" />
+	<input (keyup)="startedTyping(searchString.value)" 
+		placeholder="Search all syntax.."
+		type="text" 
+		class="input"
+		#searchString/>
 </div>
