@@ -1,0 +1,18 @@
+@import '../../../../styles/variables';
+
+.logo {
+	color: $black;
+	font-size: 0;
+	font-weight: 300;
+	.bracket,
+	.the,
+	.syntax {
+		font-size: 23px;
+	}
+	.syntax {
+		font-weight: 500;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
