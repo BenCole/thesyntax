@@ -7,11 +7,11 @@
 
 	<div class="search-container">
 		<div class="search">
-			<input class="input" type="text" placeholder="Filter javascript...">
+			<input [(ngModel)]="filterString" type="text" class="input" placeholder="Filter javascript...">
 		</div>
 	</div>
 
-	<syntax-list [language]="lang" [list]="list"></syntax-list>
+	<syntax-list [filterString]="filterString" [language]="lang" [list]="list"></syntax-list>
 
 	<div class="buttons-container">
 		<div routerLink="/add" class="button button--primary">

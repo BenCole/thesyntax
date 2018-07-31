@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SyntaxService } from '../../../services/syntax.service';
-import { flatMap } from 'rxjs/operators';
 
 @Component({
     selector: 'language-container',
@@ -11,6 +10,7 @@ import { flatMap } from 'rxjs/operators';
 export class LanguageContainerComponent implements OnInit {
     lang: string;
     list;
+    filterString: string;
 
     constructor(private route: ActivatedRoute, private syntaxService: SyntaxService) { }
 
@@ -21,18 +21,6 @@ export class LanguageContainerComponent implements OnInit {
             this.syntaxService.index(this.lang)
                 .subscribe(list => this.list = list);
         });
-
-
-        // this.route.params.pipe(
-        //     flatMap(params => {
-        //         this.lang = params.lang;
-        //         this.syntaxService.index(this.lang);
-        //     })
-        //     .subscribe(list => this.list = list);
-    
-        // );
-
-
     }
 
 }

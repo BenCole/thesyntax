@@ -1,5 +1,7 @@
 <div class="syntax-list-container">
 	<ul class="syntax-list">
-		<li *ngFor="let syntax of list"><a routerLink="{{syntax.id}}">{{syntax.name}}</a></li>
+		<li *ngFor="let syntax of list | filter:filterString:'name'">
+			<a routerLink="{{syntax.id}}">{{syntax.name}}</a>
+		</li>
 	</ul>	
 </div>
