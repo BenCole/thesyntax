@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Language } from '../../../models/language.interface';
 import { LanguageService } from '../../../services/language.service';
+import { UiService } from '../../../services/ui.service';
 
 @Component({
     selector: 'home-container-component',
@@ -9,10 +10,14 @@ import { LanguageService } from '../../../services/language.service';
 })
 export class HomeContainerComponent implements OnInit {
     public message: string;
-
+    
     languageList: Language[];
+    
+    constructor(private http: Http, private languageService: LanguageService, private uiService: UiService) { }
 
-    constructor(private http: Http, private languageService: LanguageService) { }
+    toggleSearch(searchString) {
+        this.uiService.toggleSearch(searchString);
+    }
 
     ngOnInit() {
         this.languageService.getLanguages()

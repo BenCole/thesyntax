@@ -10,7 +10,7 @@ export class SearchInputComponent {
     @Output()
     typingStarted: EventEmitter<any> = new EventEmitter;
 
-    startedTyping() {
-        this.typingStarted.emit(true);
+    startedTyping(searchString) {
+        this.typingStarted.emit(searchString);
     }
 }

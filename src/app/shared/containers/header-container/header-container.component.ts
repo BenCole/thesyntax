@@ -16,8 +16,8 @@ export class HeaderContainerComponent {
         this.uiService.toggleMenu();
     }
 
-    toggleSearch(status) {
-        this.uiService.toggleSearch(status);
+    toggleSearch(searchString) {
+        this.uiService.toggleSearch(searchString);
     }
 
     constructor(private uiService: UiService) {
