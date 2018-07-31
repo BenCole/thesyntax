@@ -34,5 +34,4 @@ export class AppComponent {
             this.uiService.hideMenu();
         }
     }
-
 }

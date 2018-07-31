@@ -8,6 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SyntaxListComponent implements OnInit {
 
     @Input()
+    filterString: string;
+
+    @Input()
     language: string;
 
     @Input()

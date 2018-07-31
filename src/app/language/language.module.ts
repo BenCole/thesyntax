@@ -4,15 +4,18 @@ import { LanguageContainerComponent } from './containers/language-container/lang
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { SyntaxListComponent } from './components/syntax-list/syntax-list.component';
 import { SyntaxService } from '../services/syntax.service';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         RouterModule.forChild([
             { 
                 path: 'language', 
                 children: [
-                    {
+                {
                         path: '',
                         redirectTo: 'javascript',
                         pathMatch: 'full'  
@@ -25,7 +28,11 @@ import { SyntaxService } from '../services/syntax.service';
             }
         ])
     ],
-    declarations: [LanguageContainerComponent, SyntaxListComponent],
+    declarations: [
+        LanguageContainerComponent,
+        SyntaxListComponent, 
+        FilterPipe
+    ],
     providers: [
         SyntaxService
     ]
