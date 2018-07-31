@@ -9,7 +9,7 @@ import { SyntaxService } from '../../../services/syntax.service';
 })
 export class ViewSyntaxContainerComponent implements OnInit {
 
-    id: string;
+    name: string;
     lang: string;
     content: string;
 
@@ -17,12 +17,12 @@ export class ViewSyntaxContainerComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.id = params.syntax;
+            this.name = params.syntax;
             this.lang = params.lang;
 
-            this.syntaxService.getOne(this.id)
+            this.syntaxService.getOne(this.lang, this.name)
                 .subscribe(item => {
-                    this.content = `<pre><code class='${this.lang} highlight'>${item[0].syntax}</pre></code>`;
+                    this.content = `<pre><code class='${this.lang} highlight'>${item.data.syntax}</pre></code>`;
                 });
         });
     }
