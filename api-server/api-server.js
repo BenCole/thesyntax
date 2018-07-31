@@ -9,17 +9,13 @@ var router = express.Router();
 
 var apiRoutes = require('./routes/api-routes');
 
-app.use('/api', apiRoutes);
+app.use('/api/v1.0', apiRoutes);
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
-
-// app.get('123', function(req, res) {
-// 	res.send("456");
-// });
 
 // Start up the Node server
 app.listen(PORT, function() {
