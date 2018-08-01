@@ -2,7 +2,9 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
+
 
 module.exports = {
   mode: 'none',
@@ -15,7 +17,7 @@ module.exports = {
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
   // Make sure we don't include all node_modules
-  externals: [/node_modules/],
+  externals: [nodeExternals()],
   optimization: {
     minimize: false
   },
@@ -50,5 +52,7 @@ module.exports = {
       path.join(__dirname, 'src'),
       {}
     )
+
+    
   ]
 }
