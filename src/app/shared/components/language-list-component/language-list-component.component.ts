@@ -9,5 +9,5 @@ import { Language } from '../../../models/language.interface';
 export class LanguageListComponent {
 
     @Input()
-    languages;
+    languages: any[];
 }

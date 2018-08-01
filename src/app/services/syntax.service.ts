@@ -1,36 +1,37 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional, Inject } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
 import { Observable, of } from 'rxjs';
-import { Http, Response } from '@angular/http';
 import { map, catchError} from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
 export class SyntaxService {
 
-    constructor(private http: Http) { }
+    origin: string;
+
+    constructor(private httpClient: HttpClient, @Optional() @Inject(APP_BASE_HREF) origin: string) { 
+       this.origin = origin; 
+    }
 
     index(lang): Observable<any> {
-        return this.http.get(`/api/v1.0/syntax/${lang}`)
-            .pipe(map((responce: Response) => responce.json()))
+        return this.httpClient.get(`/api/v1.0/syntax/${lang}`)
             .pipe(catchError((error: any) => of(error)));
     }
 
     getOne(lang, name): Observable<any> {
-        return this.http.get(`/api/v1.0/language/${lang}/${name}`)
-            .pipe(map((responce: Response) => responce.json()))
+        return this.httpClient.get(`/api/v1.0/language/${lang}/${name}`)
             .pipe(catchError((error: any) => of(error)));
     }
 
     search(qu): Observable<any> {
-        return this.http.get(`/api/v1.0/search?q=${qu}`)
-            .pipe(map((responce: Response) => responce.json()))
+        return this.httpClient.get(`/api/v1.0/search?q=${qu}`)
             .pipe(catchError((error: any) => of(error)));
     }
 
     create(data): Observable<any> {
-        return this.http.post(`/api/v1.0/add`, data)
-            .pipe(map((responce: Response) => responce.json()))
+        return this.httpClient.post(`/api/v1.0/add`, data)
             .pipe(catchError((error: any) => of(error)));
     }
 }
