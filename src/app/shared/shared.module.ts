@@ -3,7 +3,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { MenuToggleComponent } from './components/menu-toggle/menu-toggle.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { HeaderContainerComponent } from './containers/header-container/header-container.component';
-import { CommonModule } from '../../../node_modules/@angular/common';
+import { CommonModule } from '@angular/common';
 import { FooterContainerComponent } from './containers/footer-container/footer-container.component';
 import { SearchContainerComponent } from './containers/search-container/search-container.component';
 import { MobileMenuContainerComponent } from './containers/mobile-menu-container/mobile-menu-container.component';
@@ -11,6 +11,7 @@ import { LanguageListComponent } from './components/language-list-component/lang
 import { RouterModule } from '../../../node_modules/@angular/router';
 import { LanguageService } from '../services/language.service';
 import { UiService } from '../services/ui.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,9 @@ import { UiService } from '../services/ui.service';
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        HttpClientModule
+
     ],
     exports: [
         HeaderContainerComponent,

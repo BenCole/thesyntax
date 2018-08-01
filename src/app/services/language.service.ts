@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional, Inject } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
 import { of, Observable } from 'rxjs';
 import { Language } from '../models/language.interface';
-import { Http, Response } from '@angular/http';
+import { HttpClient} from '@angular/common/http';
 import { map, catchError} from 'rxjs/operators';
 
 @Injectable({
@@ -9,11 +10,14 @@ import { map, catchError} from 'rxjs/operators';
 })
 export class LanguageService {
 
-    constructor(private http: Http) { }
+    origin: string;
 
-    getLanguages(): Observable<Language[]> {
-        return this.http.get('/api/v1.0/language')
-            .pipe(map((responce: Response) => responce.json()))
+    constructor(private httpClient: HttpClient,  @Optional() @Inject(APP_BASE_HREF) origin: string) { 
+        this.origin = origin;
+    }
+
+    getLanguages(): Observable<any> {
+        return this.httpClient.get(`/api/v1.0/language`)
             .pipe(catchError((error: any) => of(error)));
     }
 }

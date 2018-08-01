@@ -19,7 +19,9 @@ export class LanguageContainerComponent implements OnInit {
             this.lang = params.lang;
 
             this.syntaxService.index(this.lang)
-                .subscribe(list => this.list = list.data);
+                .subscribe(list => {
+                    this.list = list.data;
+                });
         });
     }
 
