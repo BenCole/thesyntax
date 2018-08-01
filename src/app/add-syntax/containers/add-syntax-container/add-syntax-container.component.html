@@ -7,7 +7,7 @@
 		<form (ngSubmit)="submitForm(addSyntaxForm)" [formGroup]="addSyntaxForm">
 			<div class="custom-select-wrapper custom-select-wrapper--dark">
 				<select required
-					formControlName="category" 
+					formControlName="language" 
 					class="custom-select custom-select--dark">
 					<option>Javascript</option>
 					<option selected>Typescript</option>
@@ -15,18 +15,18 @@
 					<option>SASS</option>
 				</select>
 			</div>
-			<div *ngIf="category.invalid && category.touched || submitAttempted">
+			<div *ngIf="language.invalid && language.touched || submitAttempted">
 				A language is required
 			</div>
 			<input class="custom-input" 
 				type="text"
-				formControlName="name"
+				formControlName="label"
 				required
 				placeholder="Name">
 				<!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"> -->
 					<!-- some error -->
 				<!-- </div> -->
-				<div *ngIf="name.invalid && name.touched || submitAttempted">
+				<div *ngIf="label.invalid && label.touched || submitAttempted">
 					A name is required
 				</div>
 			<!-- <div class="custom-checkbox">

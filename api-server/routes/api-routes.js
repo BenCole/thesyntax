@@ -13,9 +13,7 @@ router.get('/language/:language/:name', syntaxController.getSyntax);
 
 router.get('/search', syntaxController.search);
 
-router.post('/add', function(req, res) {
-    res.send('add');
-});
+router.post('/add', syntaxController.add); 
 
 module.exports = router;
 

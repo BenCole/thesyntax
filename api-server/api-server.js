@@ -1,5 +1,5 @@
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 
@@ -29,8 +29,12 @@ var app = express();
 var PORT = process.env.PORT || 4488;
 
 var router = express.Router();
+// var Syntax = mongoose.model('Syntax');
 
-var Syntax = mongoose.model('Syntax');
+// Takes the raw requests and turns them into usable properties on req.body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // Syntax.create({ name: 'for loop', syntax: 'forrrrr', language: '5b60758f3b8802462fd32b19' }, function (err, awesome_instance) {
 //   if (err) return handleError(err);
