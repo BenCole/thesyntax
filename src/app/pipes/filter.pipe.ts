@@ -12,3 +12,4 @@ export class FilterPipe implements PipeTransform {
             return it[fieldName].toLowerCase().includes(searchText);
         });
     }
+}

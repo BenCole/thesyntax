@@ -21,6 +21,6 @@ export class HomeContainerComponent implements OnInit {
 
     ngOnInit() {
         this.languageService.getLanguages()
-            .subscribe(langs => this.languageList = langs.data);
+            .subscribe(langs => this.languageList = langs);
     }
 }

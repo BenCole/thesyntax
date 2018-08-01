@@ -1,0 +1,9 @@
+<div class="search-overlay" [ngClass]="{'open' : searchOpen}">
+	<div class="group">
+		<ul>
+			<li *ngFor="let result of results.data">
+				<a href="">{{result.name}} - {{result.language}}</a>
+			</li>
+		</ul>
+	</div>
+</div>
