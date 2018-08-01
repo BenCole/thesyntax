@@ -58,7 +58,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 const language = require('./api-server/models/Language');
-const syntax = require('./api-server/models/syntax');
+const syntax = require('./api-server/models/Syntax');
 
 // Express server
 
