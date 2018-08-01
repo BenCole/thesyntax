@@ -15,8 +15,7 @@
     "generate:prerender": "cd dist && node prerender",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server",
-    "postinstall": "npm run build:ssr"
+    "serve:ssr": "node dist/server"
   },
   "pre-commit": [],
   "private": true,
@@ -39,6 +38,7 @@
     "copy-webpack-plugin": "^4.5.2",
     "core-js": "^2.4.1",
     "dotenv": "^6.0.0",
+    "mongodb": "^3.1.1",
     "mongoose": "^5.2.6",
     "ng2-ace-editor": "^0.3.8",
     "ngx-clipboard": "^11.1.1",
