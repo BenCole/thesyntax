@@ -11,7 +11,9 @@
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "app/add-syntax/add-syntax-browser.module.ts",
+    "app/browser.module.ts"
   ],
   // Add "angularCompilerOptions" with the AppServerModule you wrote
   // set as the "entryModule".
