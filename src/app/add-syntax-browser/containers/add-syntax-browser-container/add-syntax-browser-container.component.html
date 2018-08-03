@@ -1,10 +1,10 @@
-<div class="add-syntax">
+<form class="add-syntax" (ngSubmit)="submitForm(addSyntaxForm)" [formGroup]="addSyntaxForm">
 	<div class="add-syntax__info-container">
 		<div>
 			<h1 class="hero__headline hero__headline--left">Add new syntax</h1>
 		</div>
 		
-		<form class="add-syntax__form" (ngSubmit)="submitForm(addSyntaxForm)" [formGroup]="addSyntaxForm">
+		<div class="add-syntax__form">
 			<div class="add-syntax__language-container custom-select-wrapper custom-select-wrapper--dark">
 				<select required
 					formControlName="language" 
@@ -14,7 +14,7 @@
 					<option>CSS</option>
 					<option>SASS</option>
 				</select>
-				<div *ngIf="language.invalid && language.touched || submitAttempted">
+				<div class="form-error" *ngIf="language.invalid && language.touched || submitAttempted">
 					A language is required
 				</div>
 			</div>
@@ -25,18 +25,18 @@
 					required
 					placeholder="Name" />
 
-					<div *ngIf="label.invalid && label.touched || submitAttempted">
-						A name is required
-					</div>
+				<div class="form-error" *ngIf="label.invalid && label.touched || submitAttempted">
+					A name is required
+				</div>
 			</div>
-				  
+				
 			<div class="buttons-container--left">
 				<button type="submit" class="button button--primary">
 					add new syntax
 				</button>
 			</div>
-		</form>
-		<div *ngIf="syntaxError">
+		</div>
+		<div class="form-error" *ngIf="syntaxError">
 			Please enter some syntax
 		</div>
 	</div>
@@ -50,8 +50,8 @@
 	</div>
 
 	<div class="buttons-container--mobile">
-		<div class="button button--primary">
+		<button type="submit"  class="button button--primary">
 			add new syntax
-		</div>
+		</button>
 	</div>
-</div>
+</form>
