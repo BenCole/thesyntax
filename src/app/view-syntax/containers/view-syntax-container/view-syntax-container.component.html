@@ -4,7 +4,7 @@
 			<h1 class="hero__headline hero__headline--left">{{name}}</h1>
 			<h2 routerLink="/language/{{lang}}" class="subline smt">{{lang}}</h2>
 		</div>
-		<div class="buttons-container--left">
+		<div *ngIf="!loading"  class="buttons-container--left">
 			<div routerLink="/add" class="button button--primary">
 				add new syntax
 			</div>
@@ -12,7 +12,8 @@
 	</div>
 	
 	<div class="view-syntax__code-container">
-		<div class="view-syntax__code-block">
+		<loader-component [show]="loading"></loader-component>
+		<div *ngIf="!loading" class="view-syntax__code-block">
 			<view-code [content]="content"></view-code>
 			<div class="view-syntax__copy-options">
 				<div class="custom-select-wrapper">
@@ -36,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="buttons-container--mobile">
+	<div *ngIf="!loading" class="buttons-container--mobile">
 		<div routerLink="/add" class="button button--primary">
 			add new syntax
 		</div>

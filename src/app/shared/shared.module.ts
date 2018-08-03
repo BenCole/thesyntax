@@ -12,6 +12,7 @@ import { RouterModule } from '../../../node_modules/@angular/router';
 import { LanguageService } from '../services/language.service';
 import { UiService } from '../services/ui.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './components/loader/loader/loader.component';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
         SearchContainerComponent,
         MobileMenuContainerComponent,
         LanguageListComponent,
+        LoaderComponent,
     ],
     imports: [
         CommonModule,
@@ -38,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
         FooterContainerComponent,
         SearchContainerComponent,
         MobileMenuContainerComponent,
-        LanguageListComponent
+        LanguageListComponent,
+        LoaderComponent
     ],
     providers: [
         UiService,

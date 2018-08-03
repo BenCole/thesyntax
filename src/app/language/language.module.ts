@@ -6,11 +6,13 @@ import { SyntaxListComponent } from './components/syntax-list/syntax-list.compon
 import { SyntaxService } from '../services/syntax.service';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from '../pipes/filter.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        SharedModule,
         RouterModule.forChild([
             { 
                 path: 'language', 
