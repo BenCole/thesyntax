@@ -16,7 +16,7 @@ export class LanguageContainerComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute, 
-        private syntaxService: SyntaxService
+        private syntaxService: SyntaxService,
         private titleService: Title
     ) { }
 
