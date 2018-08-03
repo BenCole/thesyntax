@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SyntaxService } from '../../../services/syntax.service';
+import { SyntaxService } from '../../../services/syntax.service'
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'view-syntax-container',
@@ -14,7 +15,11 @@ export class ViewSyntaxContainerComponent implements OnInit {
     content: string;
     loading: boolean;
 
-    constructor(private route: ActivatedRoute, private syntaxService: SyntaxService) { }
+    constructor(
+        private route: ActivatedRoute, 
+        private syntaxService: SyntaxService,
+        private titleService: Title
+    ) { }
 
     ngOnInit() {
         this.loading = true;
@@ -22,6 +27,8 @@ export class ViewSyntaxContainerComponent implements OnInit {
             this.name = params.syntax;
             this.lang = params.lang;
 
+            this.titleService.setTitle(`${this.name} - ${this.lang} Syntax`); 
+            
             this.syntaxService.getOne(this.lang, this.name)
                 .subscribe(item => {
                     this.content = `<pre><code class='${this.lang} highlight'>${item.data.syntax}</pre></code>`;
