@@ -14,7 +14,6 @@ import { CommonModule } from '../../node_modules/@angular/common';
 import { HomeContainerComponent } from './home/containers/home-container/home-container.component';
 import { HomeModule } from './home/home.module';
 import { LanguageModule } from './language/language.module';
-import { AddSyntaxModule } from './add-syntax/add-syntax.module';
 import { ViewSyntaxModule } from './view-syntax/view-syntax.module';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { ViewSyntaxModule } from './view-syntax/view-syntax.module';
         SharedModule,
         CommonModule,
         LanguageModule,
-        AddSyntaxModule,
         ViewSyntaxModule
     ],
     providers: [
