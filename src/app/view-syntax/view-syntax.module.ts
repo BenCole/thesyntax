@@ -5,12 +5,14 @@ import { RouterModule } from '../../../node_modules/@angular/router';
 import { ViewCodeComponent } from './components/view-code/view-code.component';
 import { HighlightJsModule } from '../../../node_modules/angular2-highlight-js';
 import { ClipboardModule } from 'ngx-clipboard';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     imports: [
         CommonModule,
         HighlightJsModule,
         ClipboardModule,
+        SharedModule,
         RouterModule.forChild([
             {
                 path: 'language/:lang/:syntax',

@@ -12,6 +12,7 @@ export class HomeContainerComponent implements OnInit {
     public message: string;
     
     languageList: Language[];
+    loading: boolean;
     
     constructor(private http: Http, private languageService: LanguageService, private uiService: UiService) { }
 
@@ -20,9 +21,12 @@ export class HomeContainerComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loading = true;
+        
         this.languageService.getLanguages()
             .subscribe(langs => {
                 this.languageList = langs.data;
+                this.loading = false;
             });
     }
 }
