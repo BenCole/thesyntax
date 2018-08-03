@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -37,7 +37,8 @@ import { ViewSyntaxModule } from './view-syntax/view-syntax.module';
         ViewSyntaxModule
     ],
     providers: [
-        HighlightJsService
+        HighlightJsService,
+        Title
     ],
     bootstrap: [AppComponent]
 })

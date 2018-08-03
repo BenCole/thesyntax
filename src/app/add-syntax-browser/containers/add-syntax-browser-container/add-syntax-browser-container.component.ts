@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Syntax } from '../../../models/syntax';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SyntaxService } from '../../../services/syntax.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'add-syntax-container',
@@ -10,7 +11,11 @@ import { SyntaxService } from '../../../services/syntax.service';
 })
 export class AddSyntaxBrowserContainerComponent implements OnInit {
 
-    constructor(private fb: FormBuilder, private syntaxService: SyntaxService) { }
+    constructor(
+        private fb: FormBuilder, 
+        private syntaxService: SyntaxService,
+        private titleService: Title
+    ) { }
 
     code = '// Add syntax here';
     syntax = <Syntax>{};
@@ -48,6 +53,7 @@ export class AddSyntaxBrowserContainerComponent implements OnInit {
 
 
     ngOnInit() {
+        this.titleService.setTitle(`Add new - Syn.tax`); 
         this.addSyntaxForm = this.fb.group({
             label: ['', [Validators.required]],
             language: ['', [Validators.required]]
