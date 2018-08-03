@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { Syntax } from '../../../models/syntax';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SyntaxService } from '../../../services/syntax.service';
@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
     templateUrl: './add-syntax-browser-container.component.html',
     styleUrls: ['./add-syntax-browser-container.component.scss']
 })
-export class AddSyntaxBrowserContainerComponent implements OnInit {
+export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit {
 
     constructor(
         private fb: FormBuilder, 
@@ -17,6 +17,7 @@ export class AddSyntaxBrowserContainerComponent implements OnInit {
         private titleService: Title
     ) { }
 
+    @ViewChild('editor') editor;
     code = '// Add syntax here';
     syntax = <Syntax>{};
     addSyntaxForm: FormGroup;
@@ -59,4 +60,11 @@ export class AddSyntaxBrowserContainerComponent implements OnInit {
             language: ['', [Validators.required]]
         });
     }
+
+    ngAfterViewInit() {
+        this.editor.getEditor().setOptions({
+            tabSize: 4,
+        });
+    }
+
 }

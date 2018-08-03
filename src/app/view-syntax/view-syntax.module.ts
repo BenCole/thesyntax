@@ -6,6 +6,7 @@ import { ViewCodeComponent } from './components/view-code/view-code.component';
 import { HighlightJsModule } from '../../../node_modules/angular2-highlight-js';
 import { ClipboardModule } from 'ngx-clipboard';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -13,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
         HighlightJsModule,
         ClipboardModule,
         SharedModule,
+        FormsModule,
         RouterModule.forChild([
             {
                 path: 'language/:lang/:syntax',

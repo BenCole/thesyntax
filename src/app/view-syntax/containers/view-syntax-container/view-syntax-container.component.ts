@@ -14,6 +14,13 @@ export class ViewSyntaxContainerComponent implements OnInit {
     lang: string;
     content: string;
     loading: boolean;
+    
+    //copy config
+    copyCode: string;
+    spacer: string;
+    type = ' ';
+    spaces = 4;
+    originalCopyCode: string;
 
     constructor(
         private route: ActivatedRoute, 
@@ -21,7 +28,24 @@ export class ViewSyntaxContainerComponent implements OnInit {
         private titleService: Title
     ) { }
 
+    generateCopyCode(syntax): string {
+        return syntax.replace(/(\s{5})/g, `\n${this.spacer}`);
+    }
+
+    spacesUpdated(spaces) {
+        this.spaces = spaces.value;
+        this.spacer = this.type.repeat(this.spaces);
+        this.copyCode = this.generateCopyCode(this.originalCopyCode);
+    }
+
+    typeUpdated(type) {
+        this.type = type.value;
+        this.spacer = this.type.repeat(this.spaces);
+        this.copyCode = this.generateCopyCode(this.originalCopyCode);
+    }
+
     ngOnInit() {
+        this.spacer = this.type.repeat(this.spaces);
         this.loading = true;
         this.route.params.subscribe(params => {
             this.name = params.syntax;
@@ -31,6 +55,8 @@ export class ViewSyntaxContainerComponent implements OnInit {
             
             this.syntaxService.getOne(this.lang, this.name)
                 .subscribe(item => {
+                    this.originalCopyCode = item.data.syntax;
+                    this.copyCode = this.generateCopyCode(item.data.syntax);
                     this.content = `<pre><code class='${this.lang} highlight'>${item.data.syntax}</pre></code>`;
                     this.loading = false;
                 });

@@ -23,3 +23,4 @@ describe('AddSyntaxBrowserContainerComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

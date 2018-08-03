@@ -10,27 +10,26 @@
 			</div>
 		</div>
 	</div>
-	
 	<div class="view-syntax__code-container">
 		<loader-component [show]="loading"></loader-component>
 		<div *ngIf="!loading" class="view-syntax__code-block">
 			<view-code [content]="content"></view-code>
 			<div class="view-syntax__copy-options">
 				<div class="custom-select-wrapper">
-					<select class="custom-select">
-						<option>Spaces</option>
-						<option>Tabs</option>
+					<select (change)="typeUpdated(type)" class="custom-select" #type>
+						<option value=" ">Spaces</option>
+						<option value="&#09;">Tabs</option>
 					</select>
 				</div>
 				<div class="custom-select-wrapper">
-					<select class="custom-select">
+					<select (change)="spacesUpdated(spaces)" class="custom-select" #spaces>
 						<option>1</option>
-						<option selected>2</option>
-						<option>4</option>
+						<option>2</option>
+						<option selected>4</option>
 						<option>8</option>
 					</select>
 				</div>
-				<div class="button button--white" ngxClipboard [cbContent]="content">
+				<div class="button button--white" ngxClipboard [cbContent]="copyCode">
 					COPY <i class="far fa-copy"></i>
 				</div>
 			</div>
@@ -43,3 +42,4 @@
 		</div>
 	</div>
 </div>
+
