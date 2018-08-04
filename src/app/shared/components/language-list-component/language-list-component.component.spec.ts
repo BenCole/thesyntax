@@ -30,16 +30,16 @@ describe('LanguageListComponentComponent', () => {
     });
 
     it('should have a iterate over the languages array', () => {
-        component.languages = [
-            {
-                name: 'javascript',
-                icon: 'devicon-javascript-plain'
-            },
-            {
-                name: 'typescript',
-                icon: 'devicon-typescript-plain'
-            }
-        ];
+        // component.languages = [
+        //     {
+        //         name: 'javascript',
+        //         icon: 'devicon-javascript-plain'
+        //     },
+        //     {
+        //         name: 'typescript',
+        //         icon: 'devicon-typescript-plain'
+        //     }
+        // ];
         fixture.detectChanges();
         expect(element.querySelector('.button--primary').innerHTML).toContain('javascript');
     });
