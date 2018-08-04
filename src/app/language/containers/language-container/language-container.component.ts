@@ -13,6 +13,7 @@ export class LanguageContainerComponent implements OnInit {
     list;
     filterString: string;
     loading: boolean;
+    pageError: string;
 
     constructor(
         private route: ActivatedRoute, 
@@ -30,7 +31,12 @@ export class LanguageContainerComponent implements OnInit {
                 .subscribe(list => {
                     this.list = list.data;
                     this.loading = false;
-                });
+                },
+                err => {
+                    this.loading = false;
+                    this.pageError = `Error: ${err.statusText}`;
+                }
+            );
         });
     }
 }

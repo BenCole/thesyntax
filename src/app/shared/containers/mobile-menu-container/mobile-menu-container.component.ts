@@ -12,6 +12,7 @@ export class MobileMenuContainerComponent implements OnInit {
 
     languageList: Language[]; 
     menuOpen: boolean;
+    pageError: string;
 
     constructor(
         private languageService: LanguageService,
@@ -19,7 +20,13 @@ export class MobileMenuContainerComponent implements OnInit {
 
     ngOnInit() {
         this.languageService.getLang()
-            .subscribe(lang => this.languageList = lang);
+            .subscribe(data => {
+                this.languageList = data;
+            },
+            err => {
+                this.pageError = `Error: ${err.statusText}`;
+            }
+        );
 
         this.uiService.menuOpen
             .subscribe(status => {

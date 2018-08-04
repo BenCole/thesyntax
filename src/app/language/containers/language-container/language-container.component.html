@@ -13,6 +13,7 @@
 
 	<loader-component [show]="loading"></loader-component>
 	<syntax-list *ngIf="!loading" [filterString]="filterString" [language]="lang" [list]="list"></syntax-list>
+	<div *ngIf="this.pageError" class="form-error">{{this.pageError}}</div>
 
 	<div *ngIf="!loading" class="buttons-container">
 		<div routerLink="/add" class="button button--primary">

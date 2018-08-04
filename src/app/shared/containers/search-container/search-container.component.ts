@@ -15,6 +15,7 @@ export class SearchContainerComponent implements OnInit {
   results = <any>[];
   loading: boolean;
   firstLoad: boolean;
+  pageError: string;
 
   constructor(private uiService: UiService, private syntaxService: SyntaxService) {
     this.firstLoad = true;
@@ -38,7 +39,12 @@ export class SearchContainerComponent implements OnInit {
             this.results = results;
             this.firstLoad = false;
             this.loading = false;
-          });
+          },
+          err => {
+            this.loading = false;
+            this.pageError = err.status;
+          }
+        );
       });
   }
 }

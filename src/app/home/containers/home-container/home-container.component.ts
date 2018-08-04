@@ -12,9 +12,9 @@ import { Observable } from '../../../../../node_modules/rxjs';
 })
 export class HomeContainerComponent implements OnInit {
     public message: string;
-    
     languageList: any[] = [];
     loading: boolean;
+    pageError: string;
     
     constructor(
         private languageService: LanguageService, 
@@ -33,13 +33,11 @@ export class HomeContainerComponent implements OnInit {
             .subscribe(data => {
                 this.languageList = data;
                 this.loading = false;
-            });
-
-        // this.languageService.getLanguages()
-        //     .subscribe(langs => {
-        //         this.languageList = langs.data;
-        //         debugger;
-        //         this.loading = false;
-        //     });
+            },
+            err => {
+                this.loading = false;
+                this.pageError = `Error: ${err.statusText}`;
+            }
+        );
     }
 }
