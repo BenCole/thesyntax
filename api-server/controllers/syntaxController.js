@@ -25,7 +25,7 @@ exports.getSyntax = (req, res) => {
 
 exports.search = (req, res) => {
 	Syntax.
-		find({label: {"$regex": req.query.q}}).
+		find({name: {"$regex": req.query.q}}).
 		exec(function(err, results) {
 			res.send({
 				data: results
@@ -38,12 +38,13 @@ exports.add = (req, res) => {
 	obj.name = slugify(req.body.label, { lower: true });
 
 	obj.save(function(err) {
+		console.log(err);
 		if(err) {
 			if(err.code == 11000) {
-				res.sendStatus(409);
+				res.status(408).send('dupe!');
 				return;
 			}
-			res.sendStatus(400);
+			res.status(400).send('Something went wrong..');
 			return;
 		}
 		res.sendStatus(200);

@@ -4,9 +4,9 @@
 	<div *ngIf="!loading" class="group">
 		<ul>
 			<li *ngFor="let result of results">
-				<a href="">{{result.name}} - <span class="language">{{result.language}}</span></a>
+				<a href="{{result.language}}/{{result.name}}">{{result.name}} - <span class="language">{{result.language}}</span></a>
 			</li>
-			<li *ngIf="results.data && !result.data.length && !loading && !firstLoad">
+			<li *ngIf="results && !results.length && !loading && !firstLoad">
 				No syntax found	
 			</li>
 		</ul>

@@ -10,7 +10,7 @@
 					formControlName="language" 
 					class="custom-select custom-select--dark">
 					<option value="javascript">Javascript</option>
-					<option selected>Typescript</option>
+					<option>Typescript</option>
 					<option>CSS</option>
 					<option>SASS</option>
 				</select>
@@ -41,6 +41,9 @@
 		</div>
 		<div class="form-error" *ngIf="backendError">
 			{{backendError}}
+		</div>
+		<div class="form-success" *ngIf="success">
+			<b>Your syntax has been created!</b>
 		</div>
 	</div>
 

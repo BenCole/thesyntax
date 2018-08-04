@@ -24,6 +24,7 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
     submitAttempted = false;
     syntaxError: boolean;
     backendError: string;
+    success = false;
 
     get label() { return this.addSyntaxForm.get('label'); }
 
@@ -49,8 +50,9 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
         form.value.syntax = this.code;
 
         this.syntaxService.create(form.value)
-            .subscribe((a) => {
-                console.log(a);
+            .subscribe((res) => {
+                form.reset();
+                this.success = true;
             }, 
             err => {
                 if (err.status === 409) {

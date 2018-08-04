@@ -30,8 +30,8 @@ export class SyntaxService {
                 .pipe(catchError((error: any) => throwError(error)));
     }
 
-    create(data): Observable<any> {
-        return this.httpClient.post(`/api/v1.0/add`, data)
+    create(data): Observable<any> {                          // some weird bug https://github.com/angular/angular/issues/18396
+        return this.httpClient.post(`/api/v1.0/add`, data, {responseType: 'text'})
             .pipe(catchError((error: any) => throwError(error)));
     }
 }
