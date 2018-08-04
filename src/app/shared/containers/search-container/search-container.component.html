@@ -1,8 +1,13 @@
 <div class="search-overlay" [ngClass]="{'open' : searchOpen}">
-	<div class="group">
+	<div *ngIf="pageError" class="form-error">{{this.pageError}}</div>
+	<loader-component *ngIf="loading"></loader-component>
+	<div *ngIf="!loading" class="group">
 		<ul>
 			<li *ngFor="let result of results.data">
-				<a href="">{{result.name}} - {{result.language}}</a>
+				<a href="">{{result.name}} - <span class="language">{{result.language}}</span></a>
+			</li>
+			<li *ngIf="results.data && !result.data.length && !loading && !firstLoad">
+				No syntax found	
 			</li>
 		</ul>
 	</div>

@@ -15,6 +15,7 @@ export class ViewSyntaxContainerComponent implements OnInit {
     lang: string;
     content: string;
     loading: boolean;
+    pageError: string;
     
     //copy config
     copyCode: string;
@@ -51,7 +52,6 @@ export class ViewSyntaxContainerComponent implements OnInit {
     updateLocalStorageSettings(type, spaces) {
         // Client side only code.
         if (isPlatformBrowser(this.platformId)) {
-           const settings = {type: type, spaces: spaces };
            localStorage.setItem('type', type);
            localStorage.setItem('spaces', spaces);
         }
@@ -82,6 +82,9 @@ export class ViewSyntaxContainerComponent implements OnInit {
                     this.copyCode = this.generateCopyCode(item.data.syntax);
                     this.content = `<pre><code class='${this.lang} highlight'>${item.data.syntax}</pre></code>`;
                     this.loading = false;
+                },
+                err => {
+                    this.pageError = `Error: ${err.statusText}`;
                 });
         });
     }

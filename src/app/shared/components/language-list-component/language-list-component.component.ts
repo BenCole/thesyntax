@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Language } from '../../../models/language.interface';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'language-list-component',
@@ -7,7 +6,6 @@ import { Language } from '../../../models/language.interface';
     styleUrls: ['./language-list-component.component.scss']
 })
 export class LanguageListComponent {
-
     @Input()
-    languages: any[];
+    items: any;
 }

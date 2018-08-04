@@ -10,7 +10,6 @@ export class HeaderContainerComponent {
 
     menuOpen: boolean;
     searchOpen: boolean;
-    ok: string;
 
     toggleMenu() {
         this.uiService.toggleMenu();
