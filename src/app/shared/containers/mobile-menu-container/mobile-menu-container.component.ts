@@ -13,10 +13,12 @@ export class MobileMenuContainerComponent implements OnInit {
     languageList: Language[]; 
     menuOpen: boolean;
 
-    constructor(private languageService: LanguageService, private uiService: UiService) { }
+    constructor(
+        private languageService: LanguageService,
+        private uiService: UiService) { }
 
     ngOnInit() {
-        this.languageService.getLanguages()
+        this.languageService.getLang()
             .subscribe(lang => this.languageList = lang);
 
         this.uiService.menuOpen

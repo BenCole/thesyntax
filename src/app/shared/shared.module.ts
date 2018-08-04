@@ -30,7 +30,6 @@ import { LoaderComponent } from './components/loader/loader/loader.component';
         CommonModule,
         RouterModule,
         HttpClientModule
-
     ],
     exports: [
         HeaderContainerComponent,

@@ -1,9 +1,8 @@
 <div class="mobile-menu" [ngClass]="{'open' : menuOpen }">
+	<language-list-component [items]="languageList" class="language-list"></language-list-component>
 	<!-- <div class="search">
 		<input class="input" type="text" placeholder="Search all..">
 	</div> -->
-	
-	<language-list-component [languages]="languageList" class="language-list"></language-list-component>
 	
 	<div class="button button--primary">
 		add new syntax

@@ -14,8 +14,11 @@ export class SearchContainerComponent implements OnInit {
   searchString: string;
   results = <any>[];
   loading: boolean;
+  firstLoad: boolean;
 
-  constructor(private uiService: UiService, private syntaxService: SyntaxService) { }
+  constructor(private uiService: UiService, private syntaxService: SyntaxService) {
+    this.firstLoad = true;
+  }
 
   ngOnInit() {
     this.uiService.searchOpen
@@ -33,6 +36,7 @@ export class SearchContainerComponent implements OnInit {
         this.syntaxService.search(this.searchString)
           .subscribe(results => {
             this.results = results;
+            this.firstLoad = false;
             this.loading = false;
           });
       });

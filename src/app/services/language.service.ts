@@ -12,12 +12,21 @@ export class LanguageService {
 
     origin: string;
 
-    constructor(private httpClient: HttpClient,  @Optional() @Inject(APP_BASE_HREF) origin: string) { 
+    constructor(
+        private httpClient: HttpClient,
+        @Optional() @Inject(APP_BASE_HREF) origin: string) { 
         this.origin = origin;
     }
 
     getLanguages(): Observable<any> {
         return this.httpClient.get(`/api/v1.0/language`)
             .pipe(catchError((error: any) => of(error)));
+    }
+
+    getLang() {
+       return this.httpClient.get(`/api/v1.0/language`)
+        .pipe(
+            map((res: Response) => res['data'])
+        );
     }
 }

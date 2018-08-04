@@ -4,9 +4,8 @@
 			<span class="accent">[</span>syn.tax<span class="accent">]</span> lookup</h1>
 	</div>
 
-	<!-- <search-input (typingStarted)="toggleSearch($event)" class="search-container"></search-input> -->
 	<loader-component [show]="loading"></loader-component>
-	<language-list-component *ngIf="!loading" [languages]="languageList" style="margin-top: 30px;"  class="language-list"></language-list-component>
+	<language-list-component [items]="languageList" style="margin-top: 30px;"  class="language-list"></language-list-component>
 
 	<div *ngIf="!loading" class="buttons-container">
 		<div routerLink="add" class="button button--primary">

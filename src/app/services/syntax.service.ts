@@ -26,8 +26,8 @@ export class SyntaxService {
     }
 
     search(qu): Observable<any> {
-        return this.httpClient.get(`/api/v1.0/search?q=${qu}`)
-            .pipe(catchError((error: any) => of(error)));
+            return this.httpClient.get(`/api/v1.0/search?q=${qu}`)
+                .pipe(catchError((error: any) => of(error)));
     }
 
     create(data): Observable<any> {
