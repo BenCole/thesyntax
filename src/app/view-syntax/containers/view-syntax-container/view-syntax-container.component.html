@@ -13,6 +13,7 @@
 	<div class="view-syntax__code-container">
 		<div *ngIf="this.pageError" class="form-error">{{this.pageError}}</div>
 		<loader-component [show]="loading"></loader-component>
+		
 		<div *ngIf="!loading" class="view-syntax__code-block">
 			<view-code [content]="content"></view-code>
 			<div class="view-syntax__copy-options">

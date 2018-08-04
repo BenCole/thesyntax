@@ -36,7 +36,7 @@ export class SearchContainerComponent implements OnInit {
         this.searchString = searchString;
         this.syntaxService.search(this.searchString)
           .subscribe(results => {
-            this.results = results;
+            this.results = results.data;
             this.firstLoad = false;
             this.loading = false;
           },

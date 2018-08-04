@@ -6,7 +6,7 @@ import { Component, OnInit, AfterViewInit, ElementRef, Input } from '@angular/co
     templateUrl: './view-code.component.html',
     styleUrls: ['./view-code.component.scss']
 })
-export class ViewCodeComponent implements OnInit{
+export class ViewCodeComponent implements OnInit {
 
     @Input()
     content: string;

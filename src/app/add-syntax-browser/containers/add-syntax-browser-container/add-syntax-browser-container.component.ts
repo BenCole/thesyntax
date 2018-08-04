@@ -62,9 +62,6 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
     }
 
     ngAfterViewInit() {
-        this.editor.getEditor().setOptions({
-            tabSize: 4,
-        });
+        // TODO: set syntax mode
     }
-
 }
