@@ -51,7 +51,6 @@ export class ViewSyntaxContainerComponent implements OnInit {
     updateLocalStorageSettings(type, spaces) {
         // Client side only code.
         if (isPlatformBrowser(this.platformId)) {
-           const settings = {type: type, spaces: spaces };
            localStorage.setItem('type', type);
            localStorage.setItem('spaces', spaces);
         }

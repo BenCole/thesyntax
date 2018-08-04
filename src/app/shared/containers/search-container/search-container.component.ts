@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../../services/ui.service';
 import { SyntaxService } from '../../../services/syntax.service';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'search-container',
@@ -22,6 +23,7 @@ export class SearchContainerComponent implements OnInit {
       });
 
     this.uiService.searchString
+      .pipe(debounceTime(350))
       .subscribe(searchString => {
         this.searchString = searchString;
         this.syntaxService.search(this.searchString)
