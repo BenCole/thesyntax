@@ -16,17 +16,18 @@
 			<view-code [content]="content"></view-code>
 			<div class="view-syntax__copy-options">
 				<div class="custom-select-wrapper">
-					<select (change)="typeUpdated(type)" class="custom-select" #type>
+					<select [ngModel]="type" (change)="typeUpdated(typeSelected)" class="custom-select" 
+						#typeSelected="ngModel">
 						<option value=" ">Spaces</option>
 						<option value="&#09;">Tabs</option>
 					</select>
 				</div>
 				<div class="custom-select-wrapper">
-					<select (change)="spacesUpdated(spaces)" class="custom-select" #spaces>
-						<option>1</option>
-						<option>2</option>
-						<option selected>4</option>
-						<option>8</option>
+					<select [ngModel]="spaces" (change)="spacesUpdated(space)" class="custom-select" #space="ngModel">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="4">4</option>
+						<option value="8">8 - really?</option>
 					</select>
 				</div>
 				<div class="button button--white" ngxClipboard [cbContent]="copyCode">
