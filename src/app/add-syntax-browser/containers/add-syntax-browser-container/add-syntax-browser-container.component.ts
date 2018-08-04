@@ -23,6 +23,7 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
     addSyntaxForm: FormGroup;
     submitAttempted = false;
     syntaxError: boolean;
+    backendError: string;
 
     get label() { return this.addSyntaxForm.get('label'); }
 
@@ -30,6 +31,7 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
 
     submitForm(form) {
         // reset from potential previous submit
+        this.backendError = null;
         this.submitAttempted = false;
         this.syntaxError = false; 
 
@@ -49,7 +51,15 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
         this.syntaxService.create(form.value)
             .subscribe((a) => {
                 console.log(a);
-            });
+            }, 
+            err => {
+                if (err.status === 409) {
+                    this.backendError = 'There\'s already a syntax with this name and language.';
+                    return;
+                }
+                this.backendError = 'There was an error saving your syntax. Please try again later.';
+            }
+        );
     }
 
 

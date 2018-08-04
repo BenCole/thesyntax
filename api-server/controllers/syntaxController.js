@@ -1,6 +1,7 @@
 
 const mongoose = require('mongoose');
 const Syntax = mongoose.model('Syntax');
+const slugify = require('slugify');
 
 exports.index = (req, res) => {
 	Syntax.
@@ -33,10 +34,18 @@ exports.search = (req, res) => {
 };
 
 exports.add = (req, res) => {
-	const obj = new Syntax(req.body);
-	console.log(req.body);
+	let obj = new Syntax(req.body);
+	obj.name = slugify(req.body.label, { lower: true });
 
-	obj.save(function() {
+	obj.save(function(err) {
+		if(err) {
+			if(err.code == 11000) {
+				res.sendStatus(409);
+				return;
+			}
+			res.sendStatus(400);
+			return;
+		}
 		res.sendStatus(200);
 	});
 };

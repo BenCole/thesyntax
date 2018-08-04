@@ -39,6 +39,9 @@
 		<div class="form-error" *ngIf="syntaxError">
 			Please enter some syntax
 		</div>
+		<div class="form-error" *ngIf="backendError">
+			{{backendError}}
+		</div>
 	</div>
 
 	<div class="add-syntax__code-container">

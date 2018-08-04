@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
-const syntaxSchema = new Schema({
+let syntaxSchema = new Schema({
 	label: {
           type: String,
 	},
@@ -16,5 +16,7 @@ const syntaxSchema = new Schema({
 		type: String
 	}
 });
+
+syntaxSchema.index({ name: 1, language: 1 }, { unique: true });
 
 module.exports = mongoose.model('Syntax', syntaxSchema);
