@@ -13,22 +13,27 @@ export class SearchContainerComponent implements OnInit {
   searchOpen: boolean;
   searchString: string;
   results = <any>[];
+  loading: boolean;
 
   constructor(private uiService: UiService, private syntaxService: SyntaxService) { }
 
   ngOnInit() {
     this.uiService.searchOpen
       .subscribe(status => {
+        this.results = [];
         this.searchOpen = status;
       });
 
     this.uiService.searchString
-      .pipe(debounceTime(350))
+      .pipe(debounceTime(250))
       .subscribe(searchString => {
+        this.results = [];
+        this.loading = true;
         this.searchString = searchString;
         this.syntaxService.search(this.searchString)
           .subscribe(results => {
             this.results = results;
+            this.loading = false;
           });
       });
   }
