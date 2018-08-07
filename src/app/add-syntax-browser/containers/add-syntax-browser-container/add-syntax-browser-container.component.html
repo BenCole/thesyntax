@@ -9,10 +9,11 @@
 				<select required
 					formControlName="language" 
 					class="custom-select custom-select--dark">
+					<option value="" disabled selected hidden>Language..</option>
 					<option value="javascript">Javascript</option>
-					<option>Typescript</option>
-					<option>CSS</option>
-					<option>SASS</option>
+					<option value="typescript">Typescript</option>
+					<option value="angular">Angular</option>
+					<option value="SASS">SASS</option>
 				</select>
 				<div class="form-error" *ngIf="language.invalid && language.touched || submitAttempted">
 					A language is required
@@ -23,7 +24,7 @@
 					type="text"
 					formControlName="label"
 					required
-					placeholder="Name" />
+					placeholder="Syntax name" />
 
 				<div class="form-error" *ngIf="label.invalid && label.touched || submitAttempted">
 					A name is required
@@ -32,7 +33,7 @@
 				
 			<div class="buttons-container--left">
 				<button type="submit" class="button button--primary">
-				add new syntax
+					add new syntax
 				</button>
 			</div>
 		</div>
