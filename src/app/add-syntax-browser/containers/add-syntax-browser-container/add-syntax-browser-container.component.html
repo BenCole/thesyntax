@@ -36,14 +36,14 @@
 				</button>
 			</div>
 		</div>
-		<div class="form-error" *ngIf="syntaxError">
+		<div class="form-error desktop-only" *ngIf="syntaxError">
 			Please enter some syntax
 		</div>
-		<div class="form-error" *ngIf="backendError">
+		<div class="form-error desktop-only" *ngIf="backendError">
 			{{backendError}}
 		</div>
-		<div class="form-success" *ngIf="success">
-			<b>Your syntax has been created!</b>
+		<div class="form-success desktop-only" *ngIf="success">
+			<b>Your syntax has been added!</b>
 		</div>
 	</div>
 
@@ -55,6 +55,18 @@
 	</div>
 
 	<div class="buttons-container--mobile">
+		<div class="form-success" *ngIf="success">
+			<b>Your syntax has been added!</b>
+		</div>
+		<div class="form-error" *ngIf="backendError">
+			{{backendError}}
+		</div>
+		<div class="form-error" *ngIf="!addSyntaxForm.valid && submitAttempted">
+			Please see errors above
+		</div>
+		<div class="form-error" *ngIf="syntaxError">
+			Please enter some syntax
+		</div>	
 		<button type="submit"  class="button button--primary">
 			add new syntax
 		</button>
