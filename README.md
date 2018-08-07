@@ -1,5 +1,5 @@
 # thesyn.tax
-Source of http://thesyn.tax.
+Source of https://thesyn.tax.
 
 ## About
 
@@ -24,7 +24,7 @@ Quick and easy crowdsourced syntax lookup reference.
 
 **`npm run test`**
 
-# License
+## License
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)
 
 ---
