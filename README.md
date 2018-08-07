@@ -5,7 +5,7 @@ Source of https://thesyn.tax.
 
 Quick and easy crowdsourced syntax lookup reference. 
 
-// gif to follow..
+![View syntax](https://giphy.com/gifs/sRJd7UJZEvY1FeDkbb/html5)
 
 ### Installation
 * `npm install` or `yarn`
