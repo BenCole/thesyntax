@@ -6,19 +6,21 @@
 	line-height: 61px;
 	text-align: center;
 	position: relative;
-	&:hover {
-		cursor: pointer;
-		position: relative;
-		&:after {
-			content:" ";
-			width: 0;
-			height: 0;
-			left: 0;
-			border-top: 15px solid transparent;
-			border-bottom: 15px solid transparent;
-			border-left: 15px solid $accent;
-			position: absolute;
-			top: 15px;
+	@include desktop {
+		&:hover {
+			cursor: pointer;
+			position: relative;
+			&:after {
+				content:" ";
+				width: 0;
+				height: 0;
+				left: 0;
+				border-top: 15px solid transparent;
+				border-bottom: 15px solid transparent;
+				border-left: 15px solid $accent;
+				position: absolute;
+				top: 15px;
+			}
 		}
 	}
 	&:active {
@@ -28,29 +30,35 @@
 		outline: 1px solid $primary;
 		color: $primary;
 		font-weight: 500;
-		&:hover {
-			background-color: $accent;
-			color: $white;
-			.devicon {
+		@include desktop {
+			&:hover {
+				background-color: $accent;
 				color: $white;
+				.devicon {
+					color: $white;
+				}
 			}
-		}		 
+		}
 	}
 	&--accent {
 		outline: 1px solid $accent;
 		color: $primary;
-		&:hover {
-			outline: 3px solid $accent;
-		}	
+		@include desktop {
+			&:hover {
+				outline: 3px solid $accent;
+			}	
+		}
 	}
 	&--white {
 		outline: 1px solid $white;
 		color: $white;
-		&:hover {
-			background-color: $accent;
-			color: $white;
-			outline: 1px solid $accent;
-		}	
+		@include desktop {
+			&:hover {
+				background-color: $accent;
+				color: $white;
+				outline: 1px solid $accent;
+			}
+		}
 	}
 	.devicon {
 		color: $accent;
