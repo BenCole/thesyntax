@@ -4,6 +4,7 @@
 .syntax-list {
 	display: flex;
 	flex-wrap: wrap;
+	max-width: 800px;
 	li {
 		flex-basis: 25%;
 		min-width: 150px;

@@ -38,9 +38,11 @@ main.container{
 	}
 
 	.search-container {
-		align-self: stretch;
+		align-self: center;
+		width: 100%;
 		.search {
 			margin: 25px auto;
+			width: 100%;
 			@include tablet {
 				margin: 25px auto 50px;
 				width: 400px;
