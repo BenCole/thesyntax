@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../../services/ui.service';
 import { SyntaxService } from '../../../services/syntax.service';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'search-container',
@@ -14,11 +14,9 @@ export class SearchContainerComponent implements OnInit {
   searchString: string;
   results = <any>[];
   loading: boolean;
-  firstLoad: boolean;
   pageError: string;
 
   constructor(private uiService: UiService, private syntaxService: SyntaxService) {
-    this.firstLoad = true;
   }
 
   ngOnInit() {
@@ -29,16 +27,17 @@ export class SearchContainerComponent implements OnInit {
       });
 
     this.uiService.searchString
-      .pipe(debounceTime(250))
+      .pipe(
+        tap(() => this.loading = true),
+        debounceTime(250)
+      )
       .subscribe(searchString => {
         this.results = [];
-        this.loading = true;
         this.searchString = searchString;
         this.syntaxService.search(this.searchString)
           .subscribe(results => {
-            this.results = results.data;
-            this.firstLoad = false;
             this.loading = false;
+            this.results = results.data;
           },
           err => {
             this.loading = false;
