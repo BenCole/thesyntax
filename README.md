@@ -1,11 +1,19 @@
 # thesyn.tax
+
+Fast crowdsourced syntax lookup.
 Source of https://thesyn.tax.
 
-## About
 
-Quick and easy crowdsourced syntax lookup reference. 
+#### View Syntax
 
-// gif to follow..
+
+![View syntax](https://media.giphy.com/media/jKYbHR7n3MA6XHiYcM/giphy.gif)
+#
+#
+#### Search Syntax
+
+![View syntax](https://media.giphy.com/media/8YEZfuE27dOgIYsKyE/giphy.gif)
+
 
 ### Installation
 * `npm install` or `yarn`
