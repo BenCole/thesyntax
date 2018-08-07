@@ -75,5 +75,8 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
 
     ngAfterViewInit() {
         // TODO: set syntax mode
+        this.editor.getEditor().setOptions({
+            useWorker: false
+        });
     }
 }
