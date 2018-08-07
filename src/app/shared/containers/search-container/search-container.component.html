@@ -6,7 +6,7 @@
 			<li *ngFor="let result of results">
 				<a href="language/{{result.language}}/{{result.name}}">{{result.name}} - <span class="language">{{result.language}}</span></a>
 			</li>
-			<li *ngIf="results && !results.length && !loading && !firstLoad">
+			<li *ngIf="results && !results.length && !loading">
 				No syntax found	
 			</li>
 		</ul>
