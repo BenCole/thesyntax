@@ -1,6 +1,3 @@
-// const mongoose = require('mongoose');
-// const User = mongoose.model('User');
-// const promisify = require('es6-promisify');
 
 const mongoose = require('mongoose');
 const Language = mongoose.model('Language');
