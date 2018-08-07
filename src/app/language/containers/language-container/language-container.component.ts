@@ -14,6 +14,7 @@ export class LanguageContainerComponent implements OnInit {
     filterString: string;
     loading: boolean;
     pageError: string;
+    icon: string;
 
     constructor(
         private route: ActivatedRoute, 
@@ -21,11 +22,23 @@ export class LanguageContainerComponent implements OnInit {
         private titleService: Title
     ) { }
 
+    generateIcon() {
+        if (this.lang === 'SASS') {
+            this.icon = 'devicon-sass-original';
+        } else if (this.lang === 'angular') {
+            this.icon = `devicon-angularjs-plain`;
+        } else { 
+            this.icon = `devicon-${this.lang}-plain`;
+        }
+    }
+
     ngOnInit() {
+     
         this.loading = true;
         this.route.params.subscribe(params => {
             this.lang = params.lang;
-            this.titleService.setTitle(`${this.lang} - Syn.tax`);
+            this.generateIcon();
+            this.titleService.setTitle(`${this.lang} - Syn.tax`); 
            
             this.syntaxService.index(this.lang)
                 .subscribe(list => {
