@@ -3,7 +3,6 @@
 Fast crowdsourced syntax lookup.
 Source of https://thesyn.tax.
 
-
 #### View Syntax
 
 
@@ -13,6 +12,11 @@ Source of https://thesyn.tax.
 #### Search Syntax
 
 ![View syntax](https://media.giphy.com/media/8YEZfuE27dOgIYsKyE/giphy.gif)
+
+### Generously supported by:
+<a href="http://browserstack.com">
+	<img src="https://i.imgur.com/nrUNcOG.png" width="300" />
+</a>
 
 
 ### Installation
@@ -31,6 +35,7 @@ Source of https://thesyn.tax.
 ### Testing
 
 **`npm run test`**
+
 
 ## License
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)
