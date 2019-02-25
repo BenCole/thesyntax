@@ -16,7 +16,7 @@ export class SyntaxService {
     }
 
     index(lang): Observable<any> {
-        return this.httpClient.get(`/api/v1.0/syntax/${lang}`)
+        return this.httpClient.get(`https://thesyn.tax/api/v1.0/syntax/${lang}`)
             .pipe(catchError((error: any) => throwError(error)));
     }
 
@@ -26,12 +26,12 @@ export class SyntaxService {
     }
 
     search(qu): Observable<any> {
-            return this.httpClient.get(`/api/v1.0/search?q=${qu}`)
+            return this.httpClient.get(`https://thesyn.tax/api/v1.0/search?q=${qu}`)
                 .pipe(catchError((error: any) => throwError(error)));
     }
 
     create(data): Observable<any> {                          // some weird bug https://github.com/angular/angular/issues/18396
-        return this.httpClient.post(`/api/v1.0/add`, data, {responseType: 'text'})
+        return this.httpClient.post(`https://thesyn.tax/api/v1.0/add`, data, {responseType: 'text'})
             .pipe(catchError((error: any) => throwError(error)));
     }
 }
