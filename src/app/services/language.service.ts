@@ -23,7 +23,7 @@ export class LanguageService {
     }
 
     getLang() {
-       return this.httpClient.get(`https://thesyn.tax/api/v1.0/language`)
+       return this.httpClient.get(`${this.API_URL}/api/v1.0/language`)
         .pipe(
             map((res: Response) => res['data']),
             catchError((error: any) => throwError(error))
