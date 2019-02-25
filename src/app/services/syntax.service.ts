@@ -21,7 +21,7 @@ export class SyntaxService {
     }
 
     getOne(lang, name): Observable<any> {
-        return this.httpClient.get(`/api/v1.0/language/${lang}/${name}`)
+        return this.httpClient.get(`https://thesyn.tax/api/v1.0/language/${lang}/${name}`)
             .pipe(catchError((error: any) => throwError(error)));
     }
 

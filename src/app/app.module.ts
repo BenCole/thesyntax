@@ -25,8 +25,6 @@ import { ViewSyntaxModule } from './view-syntax/view-syntax.module';
         BrowserModule.withServerTransition({ appId: 'my-app' }),
         RouterModule.forRoot([
             { path: '', component: HomeContainerComponent, pathMatch: 'full' },
-            // { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
-            // { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule' }
         ]),
         TransferHttpCacheModule,
         HighlightJsModule,

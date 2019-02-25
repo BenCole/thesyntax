@@ -26,7 +26,11 @@ Source of https://thesyn.tax.
 * run `npm run api-server` for local api server
 * run `npm run start` which will start `ng serve` with proxy
 
-### Production (also for testing SSR/Pre-rendering locally)
+## Local SSR
+
+**`npm run build:ssr:dev && npm run serve:ssr:proxy`
+
+### Production
 **`npm run build:ssr && npm run serve:ssr`** - Compiles your application and spins up a Node Express to serve your Universal application on `http://localhost:4000`.
 
 **`npm run build:prerender && npm run serve:prerender`** - Compiles your application and prerenders your applications files, spinning up a demo http-server so you can view it on `http://localhost:8080`
