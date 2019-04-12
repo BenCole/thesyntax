@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs')
 
 const mongoose = require('mongoose');
 
@@ -10,8 +11,14 @@ if (major < 7 || (major === 7 && minor <= 5)) {
   process.exit();
 }
 
-// import environmental variables from our variables.env file
-require('dotenv').config({ path: './api-server/.env' });
+try {
+  if (fs.existsSync('../../site-config/syntax_variables.env')) {
+    require('dotenv').config({ path: '../../site-config/syntax_variables.env' });
+  }
+} catch(err) {
+    require('dotenv').config({ path: './api-server/.env' });
+}
+
 
 // Connect to our Database and handle any bad connections
 console.log(process.env.DATABASE);
