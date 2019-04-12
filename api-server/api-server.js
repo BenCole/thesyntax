@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs')
+const fs = require('fs');
 
 const mongoose = require('mongoose');
 
@@ -11,11 +11,9 @@ if (major < 7 || (major === 7 && minor <= 5)) {
   process.exit();
 }
 
-console.log(fs.existsSync('../../site-config/syntax_variables.env'));
-if (fs.existsSync('../../site-config/syntax_variables.env')) {
+if (fs.existsSync('/srv/site-config/syntax_variables.env')) {
   require('dotenv').config({ path: '../../site-config/syntax_variables.env' });
 } else {
-    console.log('err')
     require('dotenv').config({ path: './api-server/.env' });
 }
 
@@ -28,7 +26,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 const language = require('./models/Language');
-const syntax = require('./models/syntax');
+const syntax = require('./models/Syntax');
 
 // Express server
 var app = express();
