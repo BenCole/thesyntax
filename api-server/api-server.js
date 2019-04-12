@@ -11,14 +11,13 @@ if (major < 7 || (major === 7 && minor <= 5)) {
   process.exit();
 }
 
-try {
-  if (fs.existsSync('../../site-config/syntax_variables.env')) {
-    require('dotenv').config({ path: '../../site-config/syntax_variables.env' });
-  }
-} catch(err) {
+console.log(fs.existsSync('../../site-config/syntax_variables.env'));
+if (fs.existsSync('../../site-config/syntax_variables.env')) {
+  require('dotenv').config({ path: '../../site-config/syntax_variables.env' });
+} else {
+    console.log('err')
     require('dotenv').config({ path: './api-server/.env' });
 }
-
 
 // Connect to our Database and handle any bad connections
 console.log(process.env.DATABASE);
