@@ -12,7 +12,7 @@ if (major < 7 || (major === 7 && minor <= 5)) {
 }
 
 if (fs.existsSync('/srv/site-config/syntax_variables.env')) {
-  require('dotenv').config({ path: '../../site-config/syntax_variables.env' });
+  require('dotenv').config({ path: '/srv/site-config/syntax_variables.env' });
 } else {
     require('dotenv').config({ path: './api-server/.env' });
 }
