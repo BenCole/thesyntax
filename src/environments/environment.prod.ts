@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: 'https://thesyn.tax',
+  API_URL: 'http://localhost:4000',
 };
