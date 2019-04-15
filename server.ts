@@ -15,6 +15,7 @@ enableProdMode();
 // Express server
 const app = express();
 
+const fs = require('fs');
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
@@ -48,7 +49,12 @@ const mongoose = require('mongoose');
 
 
 // import environmental variables from our variables.env file
-require('dotenv').config({ path: './api-server/.env' });
+
+if (fs.existsSync('/srv/site-config/syntax_variables.env')) {
+    require('dotenv').config({ path: '/srv/site-config/syntax_variables.env' });
+  } else {
+      require('dotenv').config({ path: './api-server/.env' });
+  }
 
 // Connect to our Database and handle any bad connections
 mongoose.connect(process.env.DATABASE);
