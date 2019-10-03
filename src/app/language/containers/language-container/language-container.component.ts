@@ -38,7 +38,7 @@ export class LanguageContainerComponent implements OnInit {
         this.route.params.subscribe(params => {
             this.lang = params.lang;
             this.generateIcon();
-            this.titleService.setTitle(`${this.lang} - Syn.tax`); 
+            this.titleService.setTitle(`${this.lang} - Syntax`); 
            
             this.syntaxService.index(this.lang)
                 .subscribe(list => {

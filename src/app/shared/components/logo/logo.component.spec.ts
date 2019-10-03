@@ -37,7 +37,7 @@ describe('logo component', () => {
 
         it('should contain the theSynt.tax wording', () => {
             expect(element.querySelector('.logo').innerHTML).toMatch('the');
-            expect(element.querySelector('.logo').innerHTML).toMatch('Syn.tax');
+            expect(element.querySelector('.logo').innerHTML).toMatch('Syntax');
         });
     });
 });

@@ -66,7 +66,7 @@ export class AddSyntaxBrowserContainerComponent implements OnInit, AfterViewInit
 
 
     ngOnInit() {
-        this.titleService.setTitle(`Add new - Syn.tax`); 
+        this.titleService.setTitle(`Add new - Syntax`); 
         this.addSyntaxForm = this.fb.group({
             label: ['', [Validators.required]],
             language: ['', [Validators.required]]

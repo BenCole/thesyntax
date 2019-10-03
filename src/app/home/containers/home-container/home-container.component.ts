@@ -28,7 +28,7 @@ export class HomeContainerComponent implements OnInit {
 
     ngOnInit() {
         this.loading = true;
-        this.titleService.setTitle(`Syn.tax`); 
+        this.titleService.setTitle(`Syntax`); 
         this.languageService.getLang()
             .subscribe(data => {
                 this.languageList = data;
