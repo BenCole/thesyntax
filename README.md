@@ -1,7 +1,7 @@
-# thesyn.tax
+# thesyntax.net
 
 Fast crowdsourced syntax lookup.
-Source of https://thesyn.tax.
+Source of https://thesyntax.net.
 
 #### View Syntax
 

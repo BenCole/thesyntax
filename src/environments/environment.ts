@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://thesyn.tax'
+  API_URL: 'https://thesyntax.net'
 };
