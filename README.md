@@ -29,7 +29,7 @@ Source of https://thesyntax.net.
 
 ## Local SSR
 
-**`npm run build:ssr:dev && npm run serve:ssr:proxy`
+**`npm run build:ssr:dev && npm run serve:ssr:proxy` **
 
 ### Production
 **`npm run build:ssr && npm run serve:ssr`** - Compiles your application and spins up a Node Express to serve your Universal application on `http://localhost:4000`.
