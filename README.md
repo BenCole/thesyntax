@@ -1,7 +1,12 @@
-# thesyntax.net
+# TheSyntax.net
 
 Fast crowdsourced syntax lookup.
 Source of https://thesyntax.net.
+
+### Generously supported by:
+<a href="http://browserstack.com">
+	<img src="https://i.imgur.com/nrUNcOG.png" width="300" />
+</a>
 
 #### View Syntax
 
@@ -13,10 +18,6 @@ Source of https://thesyntax.net.
 
 ![View syntax](https://media.giphy.com/media/8YEZfuE27dOgIYsKyE/giphy.gif)
 
-### Generously supported by:
-<a href="http://browserstack.com">
-	<img src="https://i.imgur.com/nrUNcOG.png" width="300" />
-</a>
 
 
 ### Installation
