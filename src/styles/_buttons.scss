@@ -2,7 +2,7 @@
 	width: 220px;
 	height: 60px;
 	font-size: 18px;
-	text-transform: uppercase;
+    text-transform: capitalize;
 	line-height: 61px;
 	text-align: center;
 	position: relative;
@@ -29,7 +29,7 @@
 	&--primary {
 		outline: 1px solid $primary;
 		color: $primary;
-		font-weight: 500;
+		font-weight: 600;
 		@include desktop {
 			&:hover {
 				background-color: $accent;
